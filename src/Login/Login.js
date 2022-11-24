@@ -1,45 +1,45 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider';
 
 const Login = () => {
 
-     // const {createUser,updateUser} = useContext(AuthContext) 
-     const { register,formState: { errors },handleSubmit } = useForm();
-     // const navigate= useNavigate()
-     // const [createUserEmail,setCreateUserEmail] = useState('')
-     // const [token]= useToken(createUserEmail)
- 
-     const handleSignUp = data =>
-     {
-         console.log(data)
-         // createUser(data.email,data.password)
-         // .then((result) => {
-         //     const user = result.user;
-         //     console.log(user)
-         //     toast('User successfully SignUp');
-         //     const userInfo = {
-         //         displayName: data.name
-         //     }
-         //     updateUser(userInfo)
-         //     .then(() => {
-         //         saveUser(data.name,data.email)
-         //       })
-         //       .catch((error) => {
-         //         console.log(error)
-         //       });
-         //   })
-         //   .catch((error) => {
-         //    console.error('error',error)
-         //   });
-     }
- 
+    const { logIn } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+   
+    const from = location.state?.from?.pathname || '/';
+
+
+    
+    const [error, setError] = useState('')
+
+    const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const handleLogin = data => {
+        console.log(data)
+        setError('')
+        logIn(data.email, data.password)
+            // setError('')
+            .then((result) => {
+                const user = result.user;
+                console.log(user)
+               
+                navigate(from, {replace: true});
+                
+            })
+            .catch((error) => {
+                console.log(error.message)
+                setError(error.message)
+            });
+    }
 
     return (
         <div className='flex justify-center items-center h-[600px] my-10'>
         <div className='w-96 p-7'>
             <p className='text-center text-5xl font-bold'>Login</p>
-            <form onSubmit={handleSubmit(handleSignUp)}>
+            <form onSubmit={handleSubmit(handleLogin)}>
                 
                 <div className="form-control w-full ">
                     <label className="label">
