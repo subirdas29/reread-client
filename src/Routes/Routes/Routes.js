@@ -23,12 +23,10 @@ export const router = createBrowserRouter([
         path:'/signup',
         element:<SignUp></SignUp>
     },
-
-    // `http://localhost:3000/categories/${params.id}`
     {
-        path:'/books', 
+        path:'/categories/:id',
         element:<Books></Books>,
-        loader:()=> fetch('books.json')
+        loader:({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
     },
     {
         path:'/about',
