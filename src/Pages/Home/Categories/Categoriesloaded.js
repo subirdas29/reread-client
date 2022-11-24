@@ -1,0 +1,23 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Categoriesloaded = ({category}) => {
+
+    const {cat_name,cat_img,category_id} = category
+    return (
+        <div className="card  shadow-xl image-full my-10">
+        <figure><img src={cat_img} alt="Shoes" /></figure>
+        <div className="card-body text-center">
+         <div>
+         <h2 className="text-white text-2xl font-bold">{cat_name}</h2>
+          <p className='mt-2'>If you want to visit best {cat_name} books?</p>
+         </div>
+          <div className="card-actions my-5">
+            <Link to={`/categories/${category_id}`}><button className="btn btn-primary mx-auto">Visit Now</button></Link>
+          </div>
+        </div>
+      </div>
+    );
+};
+
+export default Categoriesloaded;
