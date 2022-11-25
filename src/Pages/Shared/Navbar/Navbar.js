@@ -27,14 +27,19 @@ const Navbar = () => {
     <li><Link to="/appointment">Appointment</Link></li>
     <li><Link to="/about">About</Link></li>
 
+    
+       
+       
+    
+   
     {
-        isBuyer?
+        isAdmin?
         <>
-         <li><Link to="/dashboard/myorder">DashBoard</Link></li>
+        <li><Link to="/dashboard/allbuyer">DashBoard</Link></li>
         </>:
         <>
-         <li><Link to="/dashboard/allbuyer">DashBoard</Link></li>
-        </>
+          <li><Link to="/dashboard/myproduct">DashBoard</Link></li>
+         </> 
     }
 
 

@@ -10,10 +10,13 @@ import MyOrders from "../../Pages/Dashboard/Buyer/MyOrders";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import AdminRouter from "../AdminRouter/AdminRouter";
-import AllSeller from "../../Pages/Dashboard/Admin/AllSeller";
+import AllSeller from "../../Pages/Dashboard/Admin/AllSeller/AllSeller";
 import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer";
 import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems";
 import BuyerRouter from "../BuyerRouter/BuyerRouter";
+import SellerRouter from "../SellerRouter/SellerRouter";
+import AddProduct from "../../Pages/Dashboard/Seller/AddProduct";
+import MyProducts from "../../Pages/Dashboard/Seller/MyProducts";
 
 export const router = createBrowserRouter([
     {
@@ -49,6 +52,10 @@ export const router = createBrowserRouter([
         </PrivateRouter>,
         children:[
             {
+                path:'/dashboard/myorder',
+                element:<MyOrders></MyOrders>
+            },
+            {
             path:'/dashboard/allseller',
             element:
                 <AdminRouter> <AllSeller></AllSeller></AdminRouter>
@@ -63,12 +70,20 @@ export const router = createBrowserRouter([
                 element:
                     <AdminRouter><ReportedItems></ReportedItems></AdminRouter>
                 },
+
+                {
+                    path:'/dashboard/addproduct',
+                    element:
+                        <SellerRouter><AddProduct></AddProduct></SellerRouter>
+                    },
+                {
+                    path:'/dashboard/myproduct',
+                    element:
+                        <SellerRouter><MyProducts></MyProducts></SellerRouter>
+                    },
+
             
-            {
-            path:'/dashboard/myorder',
-            element:
-                <BuyerRouter><AllBuyer></AllBuyer></BuyerRouter>
-            },
+            
             
     ]
     },
