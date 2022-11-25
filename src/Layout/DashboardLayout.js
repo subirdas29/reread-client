@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
-import Navbar from '../Pages/Shared/Navbar/Navbar';
+
+
 
 const DashboardLayout = () => {
   const {user} = useContext(AuthContext)
@@ -11,7 +12,7 @@ const DashboardLayout = () => {
   
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <Navbar></Navbar> */}
 
             <div className="drawer drawer-mobile">
   <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
@@ -22,13 +23,13 @@ const DashboardLayout = () => {
     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
      
-      <li><Link to='/dashboard'>My Appointment</Link></li>
+      <li><Link to='/dashboard/myorder'>My Orders</Link></li>
       
         {
         isAdmin && <>
-          <li> <Link to='/dashboard/alluser'>All User</Link></li>
-          <li> <Link to='/dashboard/adddoctor'>Add Doctor</Link></li>
-          <li> <Link to='/dashboard/managedoctor'>ManageDoctors</Link></li>
+          <li> <Link to='/dashboard/allseller'>All Seller</Link></li>
+          <li> <Link to='/dashboard/allbuyer'>Add Buyer</Link></li>
+          <li> <Link to='/dashboard/reporteditems'>Reported Items</Link></li>
       </>
       }
       

@@ -1,13 +1,17 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../Context/AuthProvider';
-import useAdmin from '../../hooks/useAdmin';
+import { AuthContext } from '../../../Context/AuthProvider';
+import useAdmin from '../../../hooks/useAdmin';
+import useBuyer from '../../../hooks/useBuyer';
+import useSeller from '../../../hooks/useSeller';
 
 const Navbar = () => {
     const {user,logOut} = useContext(AuthContext)
     console.log(user)
 
     const [isAdmin] = useAdmin(user?.email)
+    const [isBuyer] = useBuyer(user?.email)
+    const [isSeller] = useSeller(user?.email)
     const handleLogOut = ()=>
     {
         logOut().then(() => {
@@ -18,33 +22,36 @@ const Navbar = () => {
     }
    
     const menuItems =
-        <React.Fragment>
-           <li><Link to="/">Home</Link></li>
-            <li><Link to="/appointment">Appointment</Link></li>
-            <li><Link to="/about">About</Link></li>
-            {
-                user?.uid?
-               <>
-               <li><Link to="/dashboard">DashBoard</Link></li>
-              {
-                 isAdmin && <>
-                 <li><Link to="/dashboard/allseller">DashBoard</Link></li>
-                 </>
-              }
-                <li><button onClick={handleLogOut}>Logout</button></li>
-                <li className='flex items-center'>{user?.displayName}</li>
-               </> 
-               
-                : <>
-                <li><Link to="/login">Login</Link></li>
-            <li><Link to="/signup">SignUp</Link></li>
-                </>
-               
-            }
-               
-               
-            {/* } */}
-        </React.Fragment>
+    <React.Fragment>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/appointment">Appointment</Link></li>
+    <li><Link to="/about">About</Link></li>
+
+    {
+        isBuyer?
+        <>
+         <li><Link to="/dashboard/myorder">DashBoard</Link></li>
+        </>:
+        <>
+         <li><Link to="/dashboard/allbuyer">DashBoard</Link></li>
+        </>
+    }
+
+
+    {
+        user?.uid?
+       <>
+      
+        <li><button onClick={handleLogOut}>Logout</button></li>
+       </> 
+       
+        : <>
+        <li><Link to="/login">Login</Link></li>
+    <li><Link to="/signup">SignUp</Link></li>
+        </>
+       
+    }
+</React.Fragment>
     return (
         <div className="navbar bg-yellow-100 flex justify-between">
         <div className="navbar-start">

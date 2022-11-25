@@ -1,6 +1,5 @@
 import React from 'react';
 import AllCategories from '../Categories/AllCategories';
-import Navbar from '../../Navbar/Navbar';
 import Banner from '../Banner/Banner';
 
 

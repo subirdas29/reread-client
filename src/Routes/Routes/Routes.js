@@ -12,6 +12,8 @@ import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import AdminRouter from "../AdminRouter/AdminRouter";
 import AllSeller from "../../Pages/Dashboard/Admin/AllSeller";
 import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer";
+import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems";
+import BuyerRouter from "../BuyerRouter/BuyerRouter";
 
 export const router = createBrowserRouter([
     {
@@ -47,20 +49,27 @@ export const router = createBrowserRouter([
         </PrivateRouter>,
         children:[
             {
-            path:'/dashboard/alluser',
+            path:'/dashboard/allseller',
             element:
                 <AdminRouter> <AllSeller></AllSeller></AdminRouter>
             },
             {
-            path:'/dashboard/allbuyer',
-            element:
-                <AdminRouter><AllBuyer></AllBuyer></AdminRouter>
-            },
+                path:'/dashboard/allbuyer',
+                element:
+                    <AdminRouter><AllBuyer></AllBuyer></AdminRouter>
+                },
             {
-            path:'/dashboard/managedoctor',
+                path:'/dashboard/reporteditems',
+                element:
+                    <AdminRouter><ReportedItems></ReportedItems></AdminRouter>
+                },
+            
+            {
+            path:'/dashboard/myorder',
             element:
-                <AdminRouter><ManageDoctors></ManageDoctors></AdminRouter>
+                <BuyerRouter><AllBuyer></AllBuyer></BuyerRouter>
             },
+            
     ]
     },
    
