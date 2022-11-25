@@ -11,7 +11,7 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import AdminRouter from "../AdminRouter/AdminRouter";
 import AllSeller from "../../Pages/Dashboard/Admin/AllSeller/AllSeller";
-import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer";
+import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer/AllBuyer";
 import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems";
 import BuyerRouter from "../BuyerRouter/BuyerRouter";
 import SellerRouter from "../SellerRouter/SellerRouter";
