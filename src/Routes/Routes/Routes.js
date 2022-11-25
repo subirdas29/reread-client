@@ -6,6 +6,12 @@ import SignUp from "../../Pages/SignUp/SignUp";
 import About from "../../Pages/About/About";
 import Books from "../../Pages/Books/Books";
 import Allbooks from "../../Pages/Books/Allbooks";
+import MyOrders from "../../Pages/Dashboard/Buyer/MyOrders";
+import DashboardLayout from "../../Layout/DashboardLayout";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import AdminRouter from "../AdminRouter/AdminRouter";
+import AllSeller from "../../Pages/Dashboard/Admin/AllSeller";
+import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer";
 
 export const router = createBrowserRouter([
     {
@@ -28,9 +34,34 @@ export const router = createBrowserRouter([
         element:<Books></Books>,
         loader:({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
     },
+  
     {
         path:'/about',
         element:<About></About>
+    },
+
+    {
+        path:'/dashboard',
+        element:<PrivateRouter>
+           <DashboardLayout></DashboardLayout>
+        </PrivateRouter>,
+        children:[
+            {
+            path:'/dashboard/alluser',
+            element:
+                <AdminRouter> <AllSeller></AllSeller></AdminRouter>
+            },
+            {
+            path:'/dashboard/allbuyer',
+            element:
+                <AdminRouter><AllBuyer></AllBuyer></AdminRouter>
+            },
+            {
+            path:'/dashboard/managedoctor',
+            element:
+                <AdminRouter><ManageDoctors></ManageDoctors></AdminRouter>
+            },
+    ]
     },
    
     

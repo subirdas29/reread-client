@@ -1,6 +1,7 @@
 [
     {
         "category_id": "1",
+        "cat_name":"Literature & Fiction",
         "book_id": "1",
         "name": "The Book of Longings: A Novel",
         "img": "https://i.ibb.co/cLH57KD/61a-TMGop8-VL.jpg",
@@ -13,6 +14,7 @@
     },
     {
         "category_id": "1",
+        "cat_name":"Literature & Fiction",
         "book_id": "2",
         "name": "My Dearest Darkest",
         "img": "https://i.ibb.co/HzL4rqq/32.jpg",
@@ -25,6 +27,7 @@
     },
     {
         "category_id": "2",
+        "cat_name":"Children",
         "book_id": "1",
         "name": "Clifford's Good Deeds",
         "img": "https://i.ibb.co/DgrG62g/054521579-X-01-SCLZZZZZZZ-SX500.jpg",
@@ -37,6 +40,7 @@
     },
     {
         "category_id": "2",
+        "cat_name":"Children",
         "book_id": "2",
         "name": "A Place Called Perfect",
         "img": "https://i.ibb.co/4fyZrRC/5.jpg",
@@ -49,6 +53,7 @@
     },
     {
         "category_id": "3",
+        "cat_name":"Historical",
         "book_id": "1",
         "name": "The Beast's Heart",
         "img": "https://i.ibb.co/rf6rcwB/2.jpg",
@@ -61,6 +66,7 @@
     },
     {
         "category_id": "3",
+        "cat_name":"Historical",
         "book_id": "2",
         "name": "Gilded Girl",
         "img": "https://i.ibb.co/sRznmwX/41mv9m7-Q6y-L.jpg",
