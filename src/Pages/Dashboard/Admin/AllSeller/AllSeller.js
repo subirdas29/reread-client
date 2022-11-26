@@ -1,9 +1,20 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import ConfirmationModal from '../../../Shared/ConfirmationModal/ConfirmationModal';
 const AllSeller = () => {
 
+
   
+  const [deleteBook,setDeleteBook]= useState(null)
+  console.log(deleteBook)
+
+
+  const deleteBookDetails = ()=>
+  {
+      setDeleteBook(null)
+  }
+
 
     const {data:sellers=[],refetch,isLoading} = useQuery({
         queryKey: ['allseller'],
@@ -15,7 +26,7 @@ const AllSeller = () => {
         })
 
         
-        const handleDeleteSeller = seller => {
+        const handleDeleteBook = seller => {
           fetch(`http://localhost:5000/users/allseller/${seller._id}`, {
               method: 'DELETE', 
               // headers: {
@@ -68,12 +79,23 @@ const AllSeller = () => {
             </td>
             <td>{seller.role}</td>
             <th>
-<label className="btn btn-error" onClick={()=>handleDeleteSeller (seller)}
+<label className="btn btn-error" onClick={()=>setDeleteBook(seller)}
 htmlFor="confirmation-modal" >Delete</label>
   
 </th>
             
           </tr>)
+      }
+
+
+{
+        deleteBook && <ConfirmationModal deleteBookDetails ={deleteBookDetails}
+        Delete={handleDeleteBook}
+        deleteBook={deleteBook}
+        deleteMessage = {`Delete`}
+        title={`Are you sure you want to delete?`}
+        message = {`If you delete ${deleteBook.name}. It cannot be undone`}
+        ></ConfirmationModal>
       }
     </tbody>
    

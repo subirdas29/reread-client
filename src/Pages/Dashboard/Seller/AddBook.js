@@ -26,6 +26,7 @@ const AddBook = () => {
 
     const handleBooks = data => {
 
+        console.log(data)
 
         const formData = new FormData();
         formData.append('image', data.image[0]);
@@ -163,7 +164,7 @@ const AddBook = () => {
                     <select className="select w-full max-w-xs input-bordered" {...register("category", { required: "select is required" })}>
 
                         {
-                            categories.map(cat => <option key={cat._id} value={cat.category_id}>{cat.cat_name}</option>)
+                            categories?.map(cat => <option key={cat._id} value={cat.category_id}>{cat.cat_name}</option>)
                         }
 
                     </select>

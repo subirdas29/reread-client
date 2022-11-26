@@ -1,9 +1,20 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
+import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 
 const MyBooks = () => {
     const {user} = useContext(AuthContext)
+    const [deleteBook,setDeleteBook]= useState(null)
+    console.log(deleteBook)
+
+
+    const deleteBookDetails = ()=>
+    {
+        setDeleteBook(null)
+    }
+
 
     const { data: books, isLoading, refetch } = useQuery({
         queryKey: ['allbuyer'],
@@ -22,9 +33,30 @@ const MyBooks = () => {
             }
         }
     });
+    if(isLoading)
+    {
+        return <div>loading</div>
+    }
+
+    const handleDeleteBook = book => {
+      fetch(`http://localhost:5000/allbooks/${book._id}`, {
+          method: 'DELETE', 
+          // headers: {
+          //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+          // }
+      })
+      .then(res => res.json())
+      .then(data => {
+          if(data.deletedCount > 0){
+              refetch();
+              toast('successfully deleted')
+              
+          }
+      })
+  }
 
     return (
-        <div>
+      
             
             <div className="overflow-x-auto w-full">
   <table className="table w-full">
@@ -72,20 +104,35 @@ const MyBooks = () => {
          
         </th>
         <th>
-        <button className="btn btn-error">Delete</button>
+        <label htmlFor="confirmation-modal" className="btn btn-error"onClick={()=>setDeleteBook(book)}>
+    Delete</label>
+
         </th>
       </tr>)
         }
     
+    {
+        deleteBook && <ConfirmationModal deleteBookDetails ={deleteBookDetails}
+        Delete={handleDeleteBook}
+        deleteBook={deleteBook}
+        deleteMessage = {`Delete`}
+        title={`Are you sure you want to delete?`}
+        message = {`If you delete ${deleteBook.name}. It cannot be undone`}
+        ></ConfirmationModal>
+      }
+
+
 
     </tbody>
+
     
     
   </table>
+
 </div>
 
 
-        </div>
+        
     );
 };
 
