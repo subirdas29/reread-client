@@ -63,7 +63,8 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/allbuyer',
                 element:
-                    <AdminRouter><AllBuyer></AllBuyer></AdminRouter>
+                <PrivateRouter><AdminRouter><AllBuyer></AllBuyer></AdminRouter></PrivateRouter>
+                    
                 },
             {
                 path:'/dashboard/reporteditems',
@@ -78,8 +79,8 @@ export const router = createBrowserRouter([
                     },
                 {
                     path:'/dashboard/myproduct',
-                    element:
-                        <SellerRouter><MyProducts></MyProducts></SellerRouter>
+                    element:<PrivateRouter> <SellerRouter><MyProducts></MyProducts></SellerRouter></PrivateRouter>
+                       
                     },
 
             
