@@ -1,15 +1,20 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const SignUp = () => {
 
-    const { createUser, updateUser } = useContext(AuthContext)
+    const { createUser, updateUser,googleSignIn } = useContext(AuthContext)
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate()
+    const location = useLocation();
 
+    const from = location.state?.from?.pathname || '/';
+
+    const provider = new GoogleAuthProvider();
 
 
     const handleSignUp = data => {
@@ -36,6 +41,24 @@ const SignUp = () => {
             });
     }
 
+    const handleGoogleSignUp = event =>{
+        googleSignIn(provider)
+        .then((result) => {
+           
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = result.user;
+            navigate(from, {replace: true});
+           
+          }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const email = error.customData.email;
+            const credential = GoogleAuthProvider.credentialFromError(error);
+         
+          });
+    }
+
     const saveUser = (name,email,role)=>{
         const user = {name,email,role}
         fetch('http://localhost:5000/users',{
@@ -48,6 +71,7 @@ const SignUp = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            navigate(from, {replace: true});
             
         })
       }
@@ -102,7 +126,7 @@ const SignUp = () => {
                 </form>
                 <p className='mt-3 text-center'>Already have an account  <Link className='text-secondary' to='/login'>Please Login</Link></p>
                 <div className="divider my-6">OR</div>
-                <button type="submit" className='btn btn-outline w-full '>Continue with Google</button>
+                <button type="submit" className='btn btn-outline w-full ' onClick={handleGoogleSignUp}>Continue with Google</button>
             </div>
         </div>
     );

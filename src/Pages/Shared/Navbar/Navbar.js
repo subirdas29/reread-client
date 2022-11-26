@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
-import useBuyer from '../../../hooks/useBuyer';
 import useSeller from '../../../hooks/useSeller';
 
 const Navbar = () => {
@@ -10,7 +9,6 @@ const Navbar = () => {
     console.log(user)
 
     const [isAdmin] = useAdmin(user?.email)
-    const [isBuyer] = useBuyer(user?.email)
     const [isSeller] = useSeller(user?.email)
     const handleLogOut = ()=>
     {
@@ -24,22 +22,18 @@ const Navbar = () => {
     const menuItems =
     <React.Fragment>
     <li><Link to="/">Home</Link></li>
-    <li><Link to="/appointment">Appointment</Link></li>
     <li><Link to="/about">About</Link></li>
 
-    
-       
-       
-    
-   
     {
         isAdmin?
         <>
         <li><Link to="/dashboard/allbuyer">DashBoard</Link></li>
         </>:
-        <>
-          <li><Link to="/dashboard/myproduct">DashBoard</Link></li>
-         </> 
+        
+         isSeller ? <li><Link to="/dashboard/myproduct">DashBoard</Link></li>
+         :
+         <li><Link to="/dashboard/myorder">DashBoard</Link></li>
+         
     }
 
 

@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -5,13 +6,13 @@ import { AuthContext } from '../Context/AuthProvider';
 
 const Login = () => {
 
-    const { logIn } = useContext(AuthContext)
+    const { logIn,googleSignIn  } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
    
     const from = location.state?.from?.pathname || '/';
 
-
+    const provider = new GoogleAuthProvider();
     
     const [error, setError] = useState('')
 
@@ -34,6 +35,24 @@ const Login = () => {
                 setError(error.message)
             });
     }
+    const handleGoogleSignUp = event =>{
+        googleSignIn(provider)
+        .then((result) => {
+           
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = result.user;
+            navigate(from, {replace: true});
+           
+          }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const email = error.customData.email;
+            const credential = GoogleAuthProvider.credentialFromError(error);
+         
+          });
+    }
+
 
     return (
         <div className='flex justify-center items-center h-[600px] my-10'>
@@ -66,7 +85,7 @@ const Login = () => {
             </form>
             <p className='mt-3 text-center'>New to Doctors Portal? <Link className='text-secondary' to='/signup'>Create New Account</Link></p>
             <div className="divider my-6">OR</div>
-            <button type="submit" className='btn btn-outline w-full '>Continue with Google</button>
+            <button type="submit" className='btn btn-outline w-full ' onClick={handleGoogleSignUp}>Continue with Google</button>
         </div>
     </div>
     );

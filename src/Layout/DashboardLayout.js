@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
-import useBuyer from '../hooks/useBuyer';
+
 import useSeller from '../hooks/useSeller';
 
 
@@ -10,13 +10,12 @@ import useSeller from '../hooks/useSeller';
 const DashboardLayout = () => {
   const {user} = useContext(AuthContext)
   
-  const [isAdmin,adminLoading] = useAdmin(user?.email)
-  const [isSeller,sellerLoading] = useSeller(user?.email)
-  const [isBuyer] = useBuyer(user?.email)
+  const [isAdmin] = useAdmin(user?.email)
+  const [isSeller] = useSeller(user?.email)
   
     return (
         <div>
-            {/* <Navbar></Navbar> */}
+           
 
             <div className="drawer drawer-mobile">
   <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
@@ -29,7 +28,7 @@ const DashboardLayout = () => {
      
 
        
-    <li> <Link to='/dashboard/myorder'>MyOrders</Link></li>
+   
        
         {
         isAdmin ? <>
@@ -40,11 +39,13 @@ const DashboardLayout = () => {
       </>
       :
      
-        isSeller && <>
+        isSeller ? <>
          <li> <Link to='/dashboard/addproduct'>ADD Product</Link></li>
          <li> <Link to='/dashboard/myproduct'>My Product</Link></li>
          
-        </>
+        </> :
+
+        <li> <Link to='/dashboard/myorder'>MyOrders</Link></li>
       }
     
      

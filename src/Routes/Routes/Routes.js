@@ -5,7 +5,7 @@ import Login from "../../Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
 import About from "../../Pages/About/About";
 import Books from "../../Pages/Books/Books";
-import Allbooks from "../../Pages/Books/Allbooks";
+
 import MyOrders from "../../Pages/Dashboard/Buyer/MyOrders";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
@@ -13,7 +13,7 @@ import AdminRouter from "../AdminRouter/AdminRouter";
 import AllSeller from "../../Pages/Dashboard/Admin/AllSeller/AllSeller";
 import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer/AllBuyer";
 import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems";
-import BuyerRouter from "../BuyerRouter/BuyerRouter";
+
 import SellerRouter from "../SellerRouter/SellerRouter";
 import AddProduct from "../../Pages/Dashboard/Seller/AddProduct";
 import MyProducts from "../../Pages/Dashboard/Seller/MyProducts";
@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
         children:[
             {
                 path:'/dashboard/myorder',
-                element:<MyOrders></MyOrders>
+                element:<PrivateRouter><MyOrders></MyOrders></PrivateRouter>
             },
             {
             path:'/dashboard/allseller',
