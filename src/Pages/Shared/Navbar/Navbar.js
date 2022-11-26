@@ -30,7 +30,7 @@ const Navbar = () => {
         <li><Link to="/dashboard/allbuyer">DashBoard</Link></li>
         </>:
         
-         isSeller ? <li><Link to="/dashboard/myproduct">DashBoard</Link></li>
+         isSeller ? <li><Link to="/dashboard/mybook">DashBoard</Link></li>
          :
          <li><Link to="/dashboard/myorder">DashBoard</Link></li>
          

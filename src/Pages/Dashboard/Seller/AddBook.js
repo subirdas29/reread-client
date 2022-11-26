@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../../Context/AuthProvider';
 
-const AddProduct = () => {
+const AddBook = () => {
 
 
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imgHostKey = process.env.REACT_APP_imgbb_key;
-
+    const {user} = useContext(AuthContext)
     
     const [categories,setCategories] = useState([])
     
@@ -21,11 +22,6 @@ const AddProduct = () => {
     },[])
 
   
-    const[catId,setCatId]= useState('')
-
-    const handleCatId = cat_name =>{
-        setCatId(category_id)
-    }
 
 
     const handleBooks = data => {
@@ -45,6 +41,7 @@ const AddProduct = () => {
                     console.log(imgData.data.url)
                     const book = {
                         category_id:data.category,
+                        email:data.email,
                         book_name:data.bookname,
                         seller_name:data.name,
                         img:imgData.data.url,
@@ -56,21 +53,21 @@ const AddProduct = () => {
                         mobile_number:data.mobilenumber,
                         location:data.location,
                         description:data.description,
-                        created: new Date()
+                        published_date: new Date()
 
                     }
                     console.log(book)
 
-                    // fetch('http://localhost:5000/allbooks', {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'content-type': 'application/json',
-                    //         // authorization: `bearer ${localStorage.getItem('accessToken')}`
-                    //     },
-                    //     body: JSON.stringify(book)
-                    // })
-                    //     .then(res => res.json())
-                    //     .then(data => console.log(data))
+                    fetch('http://localhost:5000/allbooks', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            // authorization: `bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(book)
+                    })
+                        .then(res => res.json())
+                        .then(data => console.log(data))
                 }
             }
             )
@@ -88,6 +85,13 @@ const AddProduct = () => {
                 </div>
                 <div className="form-control w-full ">
                     <label className="label">
+                        <span className="label-text text-xl">Your Email</span>
+                    </label>
+                    <input type="email" defaultValue={user?.email} readOnly {...register("email", { required: "Email is required" })} placeholder="Your Email Address" className="input input-bordered w-full" />
+                    {errors.email && <p className="text-red-600" role="alert">{errors.email?.message}</p>}
+                </div>
+                <div className="form-control w-full ">
+                    <label className="label">
                         <span className="label-text text-xl">Book Name</span>
                     </label>
                     <input type="text" {...register("bookname", { required: "Book Name is required" })} placeholder="Book Name" className="input input-bordered w-full" />
@@ -97,21 +101,21 @@ const AddProduct = () => {
                     <label className="label">
                         <span className="label-text text-xl">Original_Price</span>
                     </label>
-                    <input type="text" {...register("orginalprice", { required: "Orginal Price is required" })} placeholder="Orginal Price" className="input input-bordered w-full" />
+                    <input type="number" {...register("orginalprice", { required: "Orginal Price is required" })} placeholder="Orginal Price" className="input input-bordered w-full" />
                     {errors.orginalprice && <p className="text-red-600" role="alert">{errors.orginalprice?.message}</p>}
                 </div>
                 <div className="form-control w-full ">
                     <label className="label">
                         <span className="label-text text-xl">Resale_Price</span>
                     </label>
-                    <input type="text" {...register("resaleprice", { required: "Resale Price is required" })} placeholder="Resale Price" className="input input-bordered w-full" />
+                    <input type="number" {...register("resaleprice", { required: "Resale Price is required" })} placeholder="Resale Price" className="input input-bordered w-full" />
                     {errors.resaleprice && <p className="text-red-600" role="alert">{errors.resaleprice?.message}</p>}
                 </div>
                 <div className="form-control w-full ">
                     <label className="label">
                         <span className="label-text text-xl">Year of Purchase</span>
                     </label>
-                    <input type="text" {...register("yearpurchase", { required: "Years of Purchase is required" })} placeholder="Years of Purchase" className="input input-bordered w-full" />
+                    <input type="date" {...register("yearpurchase", { required: "Years of Purchase is required" })} placeholder="Years of Purchase" className="input input-bordered w-full" />
                     {errors.yearpurchase && <p className="text-red-600" role="alert">{errors.yearpurchase?.message}</p>}
                 </div>
                 <div className="form-control w-full ">
@@ -181,14 +185,14 @@ const AddProduct = () => {
                     <label className="label">
                         <span className="label-text text-xl">Upload Image</span>
                     </label>
-                    <input type="file" {...register("image", { required: "Image is required" })} className="input input-bordered w-full" />
+                    <input type="file" {...register("image", { required: "Image is required" })} className="input  w-full" />
 
                 </div>
 
-                <input type="submit" className='btn btn-accent w-full mt-4' value='Add Doctor' />
+                <input type="submit" className='btn btn-accent w-full mt-4' value='Add Book' />
             </form>
         </div>
     );
 };
 
-export default AddProduct;
+export default AddBook;

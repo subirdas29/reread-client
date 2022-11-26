@@ -15,8 +15,10 @@ import AllBuyer from "../../Pages/Dashboard/Admin/AllBuyer/AllBuyer";
 import ReportedItems from "../../Pages/Dashboard/Admin/ReportedItems";
 
 import SellerRouter from "../SellerRouter/SellerRouter";
-import AddProduct from "../../Pages/Dashboard/Seller/AddProduct";
-import MyProducts from "../../Pages/Dashboard/Seller/MyProducts";
+
+
+import MyBooks from "../../Pages/Dashboard/Seller/MyBooks";
+import AddBook from "../../Pages/Dashboard/Seller/AddBook";
 
 export const router = createBrowserRouter([
     {
@@ -73,13 +75,13 @@ export const router = createBrowserRouter([
                 },
 
                 {
-                    path:'/dashboard/addproduct',
+                    path:'/dashboard/addbook',
                     element:
-                        <SellerRouter><AddProduct></AddProduct></SellerRouter>
+                        <SellerRouter><AddBook></AddBook></SellerRouter>
                     },
                 {
-                    path:'/dashboard/myproduct',
-                    element:<PrivateRouter> <SellerRouter><MyProducts></MyProducts></SellerRouter></PrivateRouter>
+                    path:'/dashboard/mybook',
+                    element:<PrivateRouter> <SellerRouter><MyBooks></MyBooks></SellerRouter></PrivateRouter>
                        
                     },
 
