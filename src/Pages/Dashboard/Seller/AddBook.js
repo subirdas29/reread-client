@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const AddBook = () => {
@@ -68,7 +69,10 @@ const AddBook = () => {
                         body: JSON.stringify(book)
                     })
                         .then(res => res.json())
-                        .then(data => console.log(data))
+                        .then(data => {
+                            console.log(data)
+                            toast('Successfully add book')
+                        })
                 }
             }
             )
