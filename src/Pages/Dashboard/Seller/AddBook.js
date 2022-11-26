@@ -55,7 +55,8 @@ const AddBook = () => {
                         mobile_number:data.mobilenumber,
                         location:data.location,
                         description:data.description,
-                        published_date: new Date()
+                        published_date: new Date(),
+                        advertisement:'false'
 
                     }
                     console.log(book)

@@ -20,7 +20,7 @@ const MyBooks = () => {
         queryKey: ['allbuyer'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/allbooks?email=${user?.email}`, {
+                const res = await fetch(`http://localhost:5000/allbooks/${user?.email}`, {
                     // headers: {
                     //     authorization: `bearer ${localStorage.getItem('accessToken')}`
                     // }
@@ -50,6 +50,25 @@ const MyBooks = () => {
           if(data.deletedCount > 0){
               refetch();
               toast('successfully deleted')
+              
+          }
+      })
+  }
+
+  const handleAdvertiseSubmit = id =>{
+    fetch(`http://localhost:5000/allbooks/${id}`, {
+          method: 'PUT', 
+       
+          headers: {
+              authorization: `bearer ${localStorage.getItem('accessToken')}`
+          }
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+          if(data.modifiedCount > 0){
+              refetch();
+              toast('Book added for Advertisment')
               
           }
       })
@@ -100,7 +119,7 @@ const MyBooks = () => {
         </td>
         <td>Available</td>
         <th>
-        <button className="btn btn-primary">Advertise</button>
+        <button className="btn btn-primary" onClick={()=>handleAdvertiseSubmit(book._id)}>Advertise</button>
          
         </th>
         <th>
