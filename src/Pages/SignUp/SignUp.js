@@ -27,6 +27,7 @@ const SignUp = () => {
                 const userInfo = {
                     displayName: data.name
                 }
+               
                 updateUser(userInfo)
                     .then(() => {
                         saveUser(data.name, data.email,data.select)
@@ -60,7 +61,7 @@ const SignUp = () => {
     }
 
     const saveUser = (name,email,role)=>{
-        const user = {name,email,role}
+        const user = {name,email,role,status:'unverified'}
         fetch('http://localhost:5000/users',{
         method:'POST',
         headers:{

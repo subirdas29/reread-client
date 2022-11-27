@@ -56,7 +56,8 @@ const AddBook = () => {
                         location:data.location,
                         description:data.description,
                         published_date: new Date(),
-                        advertisement:'false'
+                        advertisement:'false',
+                        status:'unverified'
 
                     }
                     console.log(book)

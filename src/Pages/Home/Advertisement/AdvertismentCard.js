@@ -2,10 +2,12 @@ import React from 'react';
 
 const AdvertismentCard = ({book}) => {
     const {img,advertisement} = book
+    console.log(book)
     return (
 <div>
     {
-        advertisement && <div className="card card-compact bg-base-100 shadow-xl">
+
+        advertisement ? <div className="card card-compact bg-base-100 shadow-xl">
         <figure><img className='h-96' src={img} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">Shoes!</h2>
@@ -14,7 +16,9 @@ const AdvertismentCard = ({book}) => {
             <button className="btn btn-primary">Buy Now</button>
           </div>
         </div>
-      </div>
+      </div>: <>
+      <p>nothing have</p>
+      </>
     }
 </div>
      

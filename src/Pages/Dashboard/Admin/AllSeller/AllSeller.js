@@ -1,6 +1,8 @@
+import { async } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import app from '../../../../firebase/firebase.config';
 import ConfirmationModal from '../../../Shared/ConfirmationModal/ConfirmationModal';
 const AllSeller = () => {
 
@@ -42,6 +44,41 @@ const AllSeller = () => {
               }
           })
       }
+
+      const handleUpdateStatus =(id,email)=>{
+
+        fetch(`http://localhost:5000/allbooks/${email}`,{
+          method:'PATCH',
+         
+        })
+        .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            refetch()
+              // if(data.deletedCount > 0){
+              //     refetch();
+              //     toast('successfully deleted')
+              // }
+          })
+
+        fetch(`http://localhost:5000/users/allseller/${id}`,{
+          method:'PATCH',
+         
+        })
+        .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            refetch()
+              // if(data.deletedCount > 0){
+              //     refetch();
+              //     toast('successfully deleted')
+                  
+              // }
+          })
+
+       
+
+      }
     return (
         <div>
        <div className="overflow-x-auto w-full">
@@ -55,6 +92,7 @@ const AllSeller = () => {
         <th>Name</th>
         <th>Email</th>
         <th>Role</th>
+        <th>Status</th>
         <th>Action</th>
         
       </tr>
@@ -62,7 +100,7 @@ const AllSeller = () => {
     <tbody>
   
       {
-        sellers.map((seller,i)=> 
+        sellers?.map((seller,i)=> 
         <tr key={seller._id}>
             <th>
               <label>
@@ -77,7 +115,18 @@ const AllSeller = () => {
             <td>
             {seller.email}
             </td>
+           
             <td>{seller.role}</td>
+         
+<th>
+{       
+         <label className="btn" onClick={()=>handleUpdateStatus(seller?._id,seller?.email)}
+          >{seller.status}</label>     
+}
+
+   
+
+</th>
             <th>
 <label className="btn btn-error" onClick={()=>setDeleteBook(seller)}
 htmlFor="confirmation-modal" >Delete</label>
