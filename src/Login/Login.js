@@ -4,12 +4,16 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 
+
 const Login = () => {
 
     const { logIn,googleSignIn  } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
-   
+    // const [loginEmail,setLoginEmail] = useState('')
+
+    // const [token] = useToken(loginEmail)
+  
     const from = location.state?.from?.pathname || '/';
 
     const provider = new GoogleAuthProvider();
@@ -26,7 +30,8 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user)
-               
+                // setLoginEmail(data.email)
+                getUserToken(data.email)
                 navigate(from, {replace: true});
                 
             })
@@ -42,6 +47,10 @@ const Login = () => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
+            console.log(user)
+            // setLoginEmail(user?.email)
+             getUserToken(user?.email)
+           
             navigate(from, {replace: true});
            
           }).catch((error) => {
@@ -52,6 +61,16 @@ const Login = () => {
          
           });
     }
+    const getUserToken = email =>{
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+        .then(res=> res.json())
+        .then(data=>{
+            if(data.accessToken){
+                localStorage.setItem('accessToken',data.accessToken)
+                navigate(from, {replace: true});
+            }
+        })
+      }
 
 
     return (

@@ -21,7 +21,11 @@ const AllSeller = () => {
     const {data:sellers=[],refetch,isLoading} = useQuery({
         queryKey: ['allseller'],
         queryFn: async()=>{
-           const res = await fetch(`https://reread-server.vercel.app/users/allseller`)
+           const res = await fetch(`https://reread-server.vercel.app/users/allseller`,{
+            headers: {
+              authorization: `bearer ${localStorage.getItem('accessToken')}`
+          }
+           })
            const data = await res.json()
            return data;
         }
@@ -31,9 +35,9 @@ const AllSeller = () => {
         const handleDeleteBook = seller => {
           fetch(`https://reread-server.vercel.app/users/allseller/${seller._id}`, {
               method: 'DELETE', 
-              // headers: {
-              //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-              // }
+              headers: {
+                  authorization: `bearer ${localStorage.getItem('accessToken')}`
+              }
           })
           .then(res => res.json())
           .then(data => {

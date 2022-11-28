@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+// import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
 
@@ -11,6 +12,14 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate()
     const location = useLocation();
+    // const [createUserEmail,setCreateUserEmail] = useState('')
+    // const [token]= useToken(createUserEmail)
+
+    // if(token)
+    // {
+    //     navigate('/')
+    // }
+
 
     const from = location.state?.from?.pathname || '/';
 
@@ -49,6 +58,8 @@ const SignUp = () => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
+            // setCreateUserEmail(user?.email)
+            getUserToken(user?.email)
             navigate(from, {replace: true});
            
           }).catch((error) => {
@@ -72,8 +83,20 @@ const SignUp = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            getUserToken(email)
+            // setCreateUserEmail(email)
             navigate(from, {replace: true});
-            
+            // http://localhost:5000/jwt?email=d104@gmail.com
+        })
+      }
+      const getUserToken = email =>{
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+        .then(res=> res.json())
+        .then(data=>{
+            if(data.accessToken){
+                localStorage.setItem('accessToken',data.accessToken)
+           
+            }
         })
       }
 

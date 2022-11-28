@@ -42,9 +42,9 @@ const AllBuyer = () => {
         const handleDeleteBook = buyer => {
             fetch(`https://reread-server.vercel.app/users/allbuyer/${buyer._id}`, {
                 method: 'DELETE', 
-                // headers: {
-                //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-                // }
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
             })
             .then(res => res.json())
             .then(data => {
