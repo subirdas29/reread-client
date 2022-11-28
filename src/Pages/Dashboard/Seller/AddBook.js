@@ -27,7 +27,7 @@ const AddBook = () => {
 
     const handleBooks = data => {
 
-        console.log(data)
+        
 
         const formData = new FormData();
         formData.append('image', data.image[0]);
@@ -39,6 +39,7 @@ const AddBook = () => {
         })
             .then(res => res.json())
             .then(imgData => {
+                console.log(data)
                 if (imgData.success) {
                     console.log(imgData.data.url)
                     const book = {
@@ -79,6 +80,7 @@ const AddBook = () => {
             }
             )
     }
+    
 
     return (
         <div className='w-96 p-7'>

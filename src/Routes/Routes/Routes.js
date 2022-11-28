@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/allbuyer',
                 element:
-                <PrivateRouter><AdminRouter><AllBuyer></AllBuyer></AdminRouter></PrivateRouter>
+                <AdminRouter><AllBuyer></AllBuyer></AdminRouter>
                     
                 },
             {
@@ -81,7 +81,7 @@ export const router = createBrowserRouter([
                     },
                 {
                     path:'/dashboard/mybook',
-                    element:<PrivateRouter> <SellerRouter><MyBooks></MyBooks></SellerRouter></PrivateRouter>
+                    element:<SellerRouter><MyBooks></MyBooks></SellerRouter>
                        
                     },
 

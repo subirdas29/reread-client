@@ -120,8 +120,9 @@ const AllSeller = () => {
          
 <th>
 {       
-         <label className="btn" onClick={()=>handleUpdateStatus(seller?._id,seller?.email)}
-          >{seller.status}</label>     
+         seller.status==='verified' ? <label className="btn" disabled onClick={()=>handleUpdateStatus(seller?._id,seller?.email)}
+         >{seller.status}</label> : <label className="btn" onClick={()=>handleUpdateStatus(seller?._id,seller?.email)}
+         >{seller.status}</label>     
 }
 
    

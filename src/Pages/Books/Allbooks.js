@@ -1,8 +1,10 @@
 import React from 'react';
-import { TiTickOutline } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
-const Allbooks = ({book}) => {
-    const {book_name,img,location,resale_price,original_price,year_of_use,seller_name,posted_time,status} = book
+
+const Allbooks = ({book,handleBookedSubmit}) => {
+    const {book_name,img,location,resale_price,original_price,year_of_use,seller_name,posted_time,status} =book
     
 
    
@@ -20,12 +22,12 @@ const Allbooks = ({book}) => {
     
   
       {
-        status && <p>Seller:{seller_name}<TiTickOutline/> </p>
+        status==='verified' ? <p>Seller:{seller_name} <FontAwesomeIcon className="text-blue-700" icon={faCircleCheck} /> </p> : <p>Seller:{seller_name}</p>
       }
  
     <p>Published Date: {posted_time}</p>
     <div className="card-actions justify-center">
-      <button className="btn btn-primary">Buy Now</button>
+      <button className="btn btn-primary" onClick={()=>handleBookedSubmit(book)}>Book Now</button>
     </div>
   </div>
 </div>
