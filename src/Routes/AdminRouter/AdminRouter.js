@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
+import { BookLoaderComponent } from '../../Pages/Shared/BookLoader/BookLoaderComponent';
 
 const AdminRouter = ({children}) => {
     const {user,loading}=useContext(AuthContext);
@@ -9,7 +10,7 @@ const AdminRouter = ({children}) => {
     const location = useLocation();
     if(loading || adminLoading)
     {
-        return <progress className="progress w-56"></progress>
+        return <BookLoaderComponent></BookLoaderComponent>
     }
 
     if (user && isAdmin){

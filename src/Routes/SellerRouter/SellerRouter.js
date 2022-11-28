@@ -4,6 +4,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 
 
 import useSeller from '../../hooks/useSeller';
+import { BookLoaderComponent } from '../../Pages/Shared/BookLoader/BookLoaderComponent';
 
 const SellerRouter = ({children}) => {
     const {user,loading}=useContext(AuthContext);
@@ -11,7 +12,7 @@ const SellerRouter = ({children}) => {
     const location = useLocation();
     if(loading || sellerLoading)
     {
-        return <progress className="progress w-56"></progress>
+        return <BookLoaderComponent></BookLoaderComponent>
     }
 
     if (user && isSeller){
