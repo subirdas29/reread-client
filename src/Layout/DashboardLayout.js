@@ -1,5 +1,6 @@
+import { faBlackboard } from '@fortawesome/free-solid-svg-icons';
 import React, { useContext, useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
 
@@ -13,10 +14,11 @@ const DashboardLayout = () => {
   
   const [isAdmin] = useAdmin(user?.email)
   const [isSeller] = useSeller(user?.email)
-  const [active, setActive] = useState(false);
+ 
   
-  const handleClick = () => {
-    setActive(!active);
+  let activeStyle = {
+    backgroundColor:'white',
+    color:'black'
   };
 
 
@@ -38,12 +40,15 @@ const DashboardLayout = () => {
    
        
         {
-        isAdmin ? <>
-          <li> <Link to='/dashboard/allseller' onClick={handleClick}  style={{ backgroundColor: active ? "yellow" : "white" }}>All Seller</Link></li>
-          <li> <Link to='/dashboard/allbuyer'>All Buyer</Link></li>
-          <li> <Link to='/dashboard/reporteditems'>Reported Items</Link></li>
+        isAdmin ? <div  >
+          <li> <NavLink to='/dashboard/allseller' style={({ isActive }) =>
+              isActive ? activeStyle : undefined}>All Seller</NavLink></li>
+          <li> <NavLink to='/dashboard/allbuyer' style={({ isActive }) =>
+              isActive ? activeStyle : undefined} className='my-5'  >All Buyer</NavLink></li>
+          <li> <NavLink to='/dashboard/reporteditems' style={({ isActive }) =>
+              isActive ? activeStyle : undefined} >Reported Items</NavLink></li>
         
-      </>
+      </div>
       :
      
         isSeller ? <>

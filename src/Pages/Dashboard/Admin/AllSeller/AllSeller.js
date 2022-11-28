@@ -82,18 +82,18 @@ const AllSeller = () => {
     return (
         <div>
        <div className="overflow-x-auto w-full">
-  <table className="table w-full">
+  <table className="table  w-full  bg-[#333333]">
 
-    <thead>
-      <tr>
-        <th>
+    <thead className='' >
+      <tr >
+        <th className='bg-[#333333]' >
          
         </th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th className='bg-[#333333] text-white'>Name</th>
+        <th className='bg-[#333333] text-white' >Email</th>
+        <th className='bg-[#333333] text-white'>Role</th>
+        <th className='bg-[#333333] text-white'>Status</th>
+        <th className='bg-[#333333] text-white'>Action</th>
         
       </tr>
     </thead>
