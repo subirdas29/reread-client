@@ -19,6 +19,7 @@ import SellerRouter from "../SellerRouter/SellerRouter";
 
 import MyBooks from "../../Pages/Dashboard/Seller/MyBooks";
 import AddBook from "../../Pages/Dashboard/Seller/AddBook";
+import Blog from "../../Blog/Blog";
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
     {
         path:'/about',
         element:<About></About>
+    },
+    {
+        path:'/blog',
+        element:<Blog></Blog>
     },
 
     {
