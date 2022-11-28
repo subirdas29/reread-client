@@ -4,6 +4,27 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = () => {
     return (
+        <div>
+<div className="hero min-h-[300px]" 
+        style={{ backgroundImage: `url("https://i.ibb.co/2yWkq0G/Untitled-1.jpg")` }}
+        >
+         
+
+          <div className='flex flex-col sm:flex-col md:flex-col lg:flex-row'>
+          
+        {/* <div className="hero-overlay bg-opacity-60"></div> */}
+        {/* <div className="hero-content text-center text-neutral-content"> */}
+          <div className=" w-full lg:w-full  my-auto p-20 text-center">
+          <h2 className='text-8xl font-bold'>Blogs</h2>
+          </div>
+         
+         
+          <div className='w-full lg:w-full  flex justify-end'><img className='w-full' src='https://i.ibb.co/DQw0d5R/6721756.png '/>
+          </div>
+        
+        </div>
+        </div>
+
         <div className='mx-auto'>
       
 <div className=" my-10">
@@ -119,6 +140,8 @@ const Blog = () => {
 	</div>
 </div> 
         </div>
+        </div>
+      
     );
 };
 

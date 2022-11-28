@@ -9,10 +9,17 @@ import useSeller from '../hooks/useSeller';
 
 const DashboardLayout = () => {
   const {user} = useContext(AuthContext)
+ 
   
   const [isAdmin] = useAdmin(user?.email)
   const [isSeller] = useSeller(user?.email)
+  const [active, setActive] = useState(false);
   
+  const handleClick = () => {
+    setActive(!active);
+  };
+
+
     return (
         <div>
            
@@ -24,7 +31,7 @@ const DashboardLayout = () => {
   </div> 
   <div className="drawer-side">
     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
-    <ul className="menu p-4 w-80 bg-base-100 text-base-content">
+    <ul className="menu p-4 w-80 bg-[#333333] text-white">
      
 
        
@@ -32,7 +39,7 @@ const DashboardLayout = () => {
        
         {
         isAdmin ? <>
-          <li> <Link to='/dashboard/allseller'>All Seller</Link></li>
+          <li> <Link to='/dashboard/allseller' onClick={handleClick}  style={{ backgroundColor: active ? "yellow" : "white" }}>All Seller</Link></li>
           <li> <Link to='/dashboard/allbuyer'>All Buyer</Link></li>
           <li> <Link to='/dashboard/reporteditems'>Reported Items</Link></li>
         
