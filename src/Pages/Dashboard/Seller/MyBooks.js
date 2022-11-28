@@ -19,7 +19,7 @@ const MyBooks = () => {
     queryKey: ['allbuyer'],
     queryFn: async () => {
       try {
-        const res = await fetch(`http://localhost:5000/allbooks/${user?.email}`, {
+        const res = await fetch(`https://reread-server.vercel.app/allbooks/${user?.email}`, {
           // headers: {
           //     authorization: `bearer ${localStorage.getItem('accessToken')}`
           // }
@@ -37,7 +37,7 @@ const MyBooks = () => {
   }
 
   const handleDeleteBook = book => {
-    fetch(`http://localhost:5000/allbooks/${book._id}`, {
+    fetch(`https://reread-server.vercel.app/allbooks/${book._id}`, {
       method: 'DELETE',
       // headers: {
       //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -55,7 +55,7 @@ const MyBooks = () => {
 
   console.log(books)
   const handleAdvertiseSubmit = id => {
-    fetch(`http://localhost:5000/allbooks/${id}`, {
+    fetch(`https://reread-server.vercel.app/allbooks/${id}`, {
       method: 'PATCH',
 
       headers: {

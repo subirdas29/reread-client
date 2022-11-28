@@ -8,7 +8,7 @@ const MyOrders = () => {
     queryKey: ['allbooks'],
     queryFn: async () => {
         try {
-            const res = await fetch('http://localhost:5000/myorders', {
+            const res = await fetch('https://reread-server.vercel.app/myorders', {
 
                 // headers: {
                 //     authorization: `bearer ${localStorage.getItem('accessToken')}`

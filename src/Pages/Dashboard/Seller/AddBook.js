@@ -15,7 +15,7 @@ const AddBook = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/categories')
+        fetch('https://reread-server.vercel.app/categories')
         .then(res=>res.json())
         .then(data=>{
             setCategories(data)
@@ -63,7 +63,7 @@ const AddBook = () => {
                     }
                     console.log(book)
 
-                    fetch('http://localhost:5000/allbooks', {
+                    fetch('https://reread-server.vercel.app/allbooks', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

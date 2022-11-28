@@ -10,7 +10,7 @@ const Advertisement = () => {
         queryKey: ['allbooks'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/adbooks?advertisement=${true}`, {
+                const res = await fetch(`https://reread-server.vercel.app/adbooks?advertisement=${true}`, {
 
                     // headers: {
                     //     authorization: `bearer ${localStorage.getItem('accessToken')}`
