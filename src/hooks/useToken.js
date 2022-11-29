@@ -6,7 +6,7 @@ const useToken = email =>{
     {
         if(email)
         {
-            fetch(`http://localhost:5000/jwt?email=${email}`)
+            fetch(`https://reread-server.vercel.app/jwt?email=${email}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data,'JOY')

@@ -51,7 +51,7 @@ const AllSeller = () => {
 
       const handleUpdateStatus =(id,email)=>{
 
-        fetch(`http://localhost:5000/verifysellerbook/${email}`,{
+        fetch(`https://reread-server.vercel.app/verifysellerbook/${email}`,{
           method:'PATCH',
          
         })

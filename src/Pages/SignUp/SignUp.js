@@ -86,11 +86,11 @@ const SignUp = () => {
             getUserToken(email)
             // setCreateUserEmail(email)
             navigate(from, {replace: true});
-            // http://localhost:5000/jwt?email=d104@gmail.com
+            // https://reread-server.vercel.app/jwt?email=d104@gmail.com
         })
       }
       const getUserToken = email =>{
-        fetch(`http://localhost:5000/jwt?email=${email}`)
+        fetch(`https://reread-server.vercel.app/jwt?email=${email}`)
         .then(res=> res.json())
         .then(data=>{
             if(data.accessToken){
