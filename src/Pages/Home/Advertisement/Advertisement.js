@@ -12,9 +12,9 @@ const Advertisement = () => {
             try {
                 const res = await fetch(`https://reread-server.vercel.app/adbooks?advertisement=${true}`, {
 
-                    // headers: {
-                    //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-                    // }
+                    headers: {
+                        authorization: `bearer ${localStorage.getItem('accessToken')}`
+                    }
 
 
                 });

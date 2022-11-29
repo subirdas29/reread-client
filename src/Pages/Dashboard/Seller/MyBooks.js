@@ -20,9 +20,9 @@ const MyBooks = () => {
     queryFn: async () => {
       try {
         const res = await fetch(`https://reread-server.vercel.app/allbooks/${user?.email}`, {
-          // headers: {
-          //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-          // }
+          headers: {
+              authorization: `bearer ${localStorage.getItem('accessToken')}`
+          }
         });
         const data = await res.json();
         return data;
