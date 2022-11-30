@@ -6,7 +6,7 @@ import useSeller from '../../../hooks/useSeller';
 
 const Navbar = () => {
     const {user,logOut} = useContext(AuthContext)
-    console.log(user)
+
 
     const [isAdmin] = useAdmin(user?.email)
     const [isSeller] = useSeller(user?.email)

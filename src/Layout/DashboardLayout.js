@@ -10,8 +10,6 @@ import useSeller from '../hooks/useSeller';
 
 const DashboardLayout = () => {
   const {user} = useContext(AuthContext)
- 
-  
   const [isAdmin] = useAdmin(user?.email)
   const [isSeller] = useSeller(user?.email)
  
@@ -26,9 +24,9 @@ const DashboardLayout = () => {
         <div>
            
 
-            <div className="drawer drawer-mobile">
+            <div className="drawer drawer-mobile ">
   <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content ">
+  <div className="drawer-content">
   <Outlet></Outlet>
   </div> 
   <div className="drawer-side">

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const AdvertismentCard = ({book}) => {
+const AdvertismentCard = ({book, handleBookedSubmit}) => {
     const {img,advertisement} = book
-    console.log(book)
+   
     return (
 <div>
     {
@@ -13,7 +13,7 @@ const AdvertismentCard = ({book}) => {
           <h2 className="card-title">Shoes!</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+            <button className="btn btn-primary" onClick={()=>handleBookedSubmit(book)}>Book Now</button>
           </div>
         </div>
       </div>: <>

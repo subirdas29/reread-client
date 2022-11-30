@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 
 const Allbooks = ({book,handleBookedSubmit}) => {
-    const {book_name,img,location,resale_price,original_price,year_of_use,seller_name,posted_time,status} =book
+    const {book_name,img,location,resale_price,original_price,year_of_use,seller_name,posted_time,email} =book
+    const [seller, setSeller] = useState({});
+    console.log(seller);
     
-
+useEffect(()=>{
+  fetch(`http://localhost:5000/users/seller/${email}`)
+  .then(res=>res.json())
+  .then(data=>setSeller(data.user))
+},[email])
    
     return (
       
@@ -22,7 +28,7 @@ const Allbooks = ({book,handleBookedSubmit}) => {
     
   
       {
-        status==='verified' ? <p>Seller:{seller_name} <FontAwesomeIcon className="text-blue-700" icon={faCircleCheck} /> </p> : <p>Seller:{seller_name}</p>
+        seller?.status==='verified' ? <p>Seller:{seller_name} <FontAwesomeIcon className="text-blue-700" icon={faCircleCheck} /> </p> : <p>Seller:{seller_name}</p>
       }
  
     <p>Published Date: {posted_time}</p>

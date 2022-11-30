@@ -15,7 +15,7 @@ const AddBook = () => {
 
 
     useEffect(()=>{
-        fetch('https://reread-server.vercel.app/categories')
+        fetch('http://localhost:5000/categories')
         .then(res=>res.json())
         .then(data=>{
             setCategories(data)
@@ -58,12 +58,12 @@ const AddBook = () => {
                         description:data.description,
                         published_date: new Date(),
                         advertisement:'false',
-                        status:'unverified'
+                        // status:'unverified'
 
                     }
                     console.log(book)
 
-                    fetch('https://reread-server.vercel.app/allbooks', {
+                    fetch('http://localhost:5000/allbooks', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -83,9 +83,9 @@ const AddBook = () => {
     
 
     return (
-        <div className='w-96 p-7'>
+        <div className='w-96 p-7 '>
             <form onSubmit={handleSubmit(handleBooks)}>
-                <div className="form-control w-full ">
+                <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text text-xl">Your Name</span>
                     </label>

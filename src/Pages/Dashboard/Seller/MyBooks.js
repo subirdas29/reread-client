@@ -7,7 +7,7 @@ import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal'
 const MyBooks = () => {
   const { user } = useContext(AuthContext)
   const [deleteBook, setDeleteBook] = useState(null)
-  console.log(deleteBook)
+ 
 
 
   const deleteBookDetails = () => {
@@ -19,7 +19,7 @@ const MyBooks = () => {
     queryKey: ['allbuyer'],
     queryFn: async () => {
       try {
-        const res = await fetch(`https://reread-server.vercel.app/allbooks/${user?.email}`, {
+        const res = await fetch(`http://localhost:5000/allbooks/${user?.email}`, {
           headers: {
               authorization: `bearer ${localStorage.getItem('accessToken')}`
           }
@@ -37,7 +37,7 @@ const MyBooks = () => {
   }
 
   const handleDeleteBook = book => {
-    fetch(`https://reread-server.vercel.app/allbooks/${book._id}`, {
+    fetch(`http://localhost:5000/allbooks/${book._id}`, {
       method: 'DELETE',
       // headers: {
       //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -53,9 +53,9 @@ const MyBooks = () => {
       })
   }
 
-  console.log(books)
+
   const handleAdvertiseSubmit = id => {
-    fetch(`https://reread-server.vercel.app/allbooks/${id}`, {
+    fetch(`http://localhost:5000/allbooks/${id}`, {
       method: 'PATCH',
 
       headers: {

@@ -1,16 +1,35 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import toast from 'react-hot-toast';
 import AdvertismentCard from './AdvertismentCard';
 
 const Advertisement = () => {
 
+    const handleBookedSubmit = book =>{
+        fetch('http://localhost:5000/myorders', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            authorization: `bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(book)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            toast('Successfully Booked')
+                        })
+    }
+
 
     const { data: adBooks, isLoading, refetch } = useQuery({
+
+        
       
         queryKey: ['allbooks'],
         queryFn: async () => {
             try {
-                const res = await fetch(`https://reread-server.vercel.app/adbooks?advertisement=${true}`, {
+                const res = await fetch(`http://localhost:5000/adbooks?advertisement=${true}`, {
 
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +53,7 @@ const Advertisement = () => {
         <div className='my-20 grid grid-cols-2 md:grid-cols-3 gap-10'>
            
            {
-             adBooks?.map(book=> <AdvertismentCard key={book._id} book={book}></AdvertismentCard>)
+             adBooks?.map(book=> <AdvertismentCard key={book._id} book={book}  handleBookedSubmit={handleBookedSubmit}></AdvertismentCard>)
            }
         </div>
         </div>

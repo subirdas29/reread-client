@@ -20,10 +20,10 @@ const AllBuyer = () => {
       queryKey: ['allbuyer'],
       queryFn: async () => {
           try {
-              const res = await fetch('https://reread-server.vercel.app/users/allbuyer', {
-                  // headers: {
-                  //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-                  // }
+              const res = await fetch('http://localhost:5000/users/allbuyer', {
+                  headers: {
+                      authorization: `bearer ${localStorage.getItem('accessToken')}`
+                  }
               });
               const data = await res.json();
               return data;
@@ -40,7 +40,7 @@ const AllBuyer = () => {
   }
 
         const handleDeleteBook = buyer => {
-            fetch(`https://reread-server.vercel.app/users/allbuyer/${buyer._id}`, {
+            fetch(`http://localhost:5000/users/allbuyer/${buyer._id}`, {
                 method: 'DELETE', 
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`

@@ -4,8 +4,9 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = () => {
     return (
-        <div>
-<div className="hero min-h-[300px]" 
+
+<div>
+<div className="hero min-h-[300px] border-2" 
         style={{ backgroundImage: `url("https://i.ibb.co/2yWkq0G/Untitled-1.jpg")` }}
         >
          
@@ -24,123 +25,51 @@ const Blog = () => {
         
         </div>
         </div>
-
-        <div className='mx-auto'>
-      
-<div className=" my-10">
-	<div className="container grid grid-cols-12 mx-auto dark:bg-white border drop-shadow-xl">
-		<div className="bg-no-repeat bg-cover dark:bg-gray-700 col-span-full lg:col-span-4"  alt=''> 
-        <img src='https://i.ibb.co/Rb97Fm4/banner.jpg' className='h-full'></img>
-        </div>
-		<div className="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
-			<div className="flex justify-start">
-				<span className="px-2 py-1 text-xs rounded-full dark:bg-[#F44344] dark:text-white">Label</span>
-			</div>
-			<h1 className="text-3xl font-semibold">Lorem ipsum dolor sit.</h1>
-			<p className="flex-1 pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.</p>
-			<a rel="noopener noreferrer" href="#" className="inline-flex items-center pt-2 pb-6 space-x-2 text-sm dark:text-[#F44344]">
-				<span>Read more</span>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-					<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-				</svg>
-			</a>
-			<div className="flex items-center justify-between pt-2">
-				<div className="flex space-x-2">
-                <FontAwesomeIcon className='ml-5 text-[#F44344]' icon={faUserCircle} />
-						
-					<span className="self-center text-sm">by Leroy Jenkins</span>
-				</div>
-				<span className="text-xs">3 min read</span>
-			</div>
+<section>
+<div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12 mx-auto my-32">
+	<a rel="noopener noreferrer" href="#" className="dark:bg-gray-100 border drop-shadow-xl block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline  focus:no-underline lg:grid lg:grid-cols-12 ">
+		<img src="https://i.ibb.co/c2Nxf3P/aleks-dorohovich-n-Jdw-UHma-Y8-A-unsplash.jpg" alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 " />
+		<div className="p-6 space-y-2 lg:col-span-5">
+			<h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline hover:text-[#F44344]">Noster tincidunt reprimique ad pro</h3>
+			<span className="text-xs dark:text-gray-400">February 19, 2021</span>
+			<p>Ei delenit sensibus liberavisse pri. Quod suscipit no nam. Est in graece fuisset, eos affert putent doctus id.</p>
 		</div>
+	</a>
+	<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+		<a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-100 border drop-shadow-xl">
+			<img role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://i.ibb.co/QQpnxWr/thought-catalog-mm-Wqrsj-Z4-Lw-unsplash.jpg" />
+			<div className="p-6 space-y-2">
+				<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline hover:text-[#F44344]">In usu laoreet repudiare legendos</h3>
+				<span className="text-xs dark:text-gray-400">January 21, 2021</span>
+				<p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
+			</div>
+		</a>
+		<a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-100 border drop-shadow-xl">
+			<img role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://i.ibb.co/NnbTxd2/thought-catalog-505eect-W54k-unsplash.jpg" />
+			<div className="p-6 space-y-2">
+				<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline hover:text-[#F44344]">In usu laoreet repudiare legendos</h3>
+				<span className="text-xs dark:text-gray-400">January 22, 2021</span>
+				<p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
+			</div>
+		</a>
+		<a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-100 border drop-shadow-xl">
+			<img role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://i.ibb.co/Rb97Fm4/banner.jpg" />
+			<div className="p-6 space-y-2">
+				<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline hover:text-[#F44344]">In usu laoreet repudiare legendos</h3>
+				<span className="text-xs dark:text-gray-400">January 23, 2021</span>
+				<p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
+			</div>
+		</a>
+	
+	
+	
 	</div>
-</div> 
-<div className=" my-10">
-	<div className="container grid grid-cols-12 mx-auto dark:bg-white border drop-shadow-xl">
-		<div className="bg-no-repeat bg-cover dark:bg-gray-700 col-span-full lg:col-span-4"  alt=''> 
-        <img src='https://i.ibb.co/Rb97Fm4/banner.jpg' className='h-full'></img>
-        </div>
-		<div className="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
-			<div className="flex justify-start">
-				<span className="px-2 py-1 text-xs rounded-full dark:bg-[#F44344] dark:text-white">Label</span>
-			</div>
-			<h1 className="text-3xl font-semibold">Lorem ipsum dolor sit.</h1>
-			<p className="flex-1 pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.</p>
-			<a rel="noopener noreferrer" href="#" className="inline-flex items-center pt-2 pb-6 space-x-2 text-sm dark:text-[#F44344]">
-				<span>Read more</span>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-					<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-				</svg>
-			</a>
-			<div className="flex items-center justify-between pt-2">
-				<div className="flex space-x-2">
-                <FontAwesomeIcon className='ml-5 text-[#F44344]' icon={faUserCircle} />
-						
-					<span className="self-center text-sm">by Leroy Jenkins</span>
-				</div>
-				<span className="text-xs">3 min read</span>
-			</div>
-		</div>
+	<div className="flex justify-center">
+		<button type="button" className="px-6 py-3 text-sm rounded-md hover:underline bg-black px-12 mt-5 rounded-full text-white py-5 hover:bg-[#F44344]">Load more posts...</button>
 	</div>
-</div> 
-<div className=" my-10">
-	<div className="container grid grid-cols-12 mx-auto dark:bg-white border drop-shadow-xl">
-		<div className="bg-no-repeat bg-cover dark:bg-gray-700 col-span-full lg:col-span-4"  alt=''> 
-        <img src='https://i.ibb.co/Rb97Fm4/banner.jpg' className='h-full'></img>
-        </div>
-		<div className="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
-			<div className="flex justify-start">
-				<span className="px-2 py-1 text-xs rounded-full dark:bg-[#F44344] dark:text-white">Label</span>
-			</div>
-			<h1 className="text-3xl font-semibold">Lorem ipsum dolor sit.</h1>
-			<p className="flex-1 pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.</p>
-			<a rel="noopener noreferrer" href="#" className="inline-flex items-center pt-2 pb-6 space-x-2 text-sm dark:text-[#F44344]">
-				<span>Read more</span>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-					<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-				</svg>
-			</a>
-			<div className="flex items-center justify-between pt-2">
-				<div className="flex space-x-2">
-                <FontAwesomeIcon className='ml-5 text-[#F44344]' icon={faUserCircle} />
-						
-					<span className="self-center text-sm">by Leroy Jenkins</span>
-				</div>
-				<span className="text-xs">3 min read</span>
-			</div>
-		</div>
-	</div>
-</div> 
-<div className=" my-10">
-	<div className="container grid grid-cols-12 mx-auto dark:bg-white border drop-shadow-xl">
-		<div className="bg-no-repeat bg-cover dark:bg-gray-700 col-span-full lg:col-span-4"  alt=''> 
-        <img src='https://i.ibb.co/Rb97Fm4/banner.jpg' className='h-full'></img>
-        </div>
-		<div className="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
-			<div className="flex justify-start">
-				<span className="px-2 py-1 text-xs rounded-full dark:bg-[#F44344] dark:text-white">Label</span>
-			</div>
-			<h1 className="text-3xl font-semibold">Lorem ipsum dolor sit.</h1>
-			<p className="flex-1 pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.</p>
-			<a rel="noopener noreferrer" href="#" className="inline-flex items-center pt-2 pb-6 space-x-2 text-sm dark:text-[#F44344]">
-				<span>Read more</span>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-					<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-				</svg>
-			</a>
-			<div className="flex items-center justify-between pt-2">
-				<div className="flex space-x-2">
-                <FontAwesomeIcon className='ml-5 text-[#F44344]' icon={faUserCircle} />
-						
-					<span className="self-center text-sm">by Leroy Jenkins</span>
-				</div>
-				<span className="text-xs">3 min read</span>
-			</div>
-		</div>
-	</div>
-</div> 
-        </div>
-        </div>
+</div>
+</section>
+</div>
       
     );
 };

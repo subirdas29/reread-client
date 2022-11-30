@@ -21,7 +21,7 @@ const AllSeller = () => {
     const {data:sellers=[],refetch,isLoading} = useQuery({
         queryKey: ['allseller'],
         queryFn: async()=>{
-           const res = await fetch(`https://reread-server.vercel.app/users/allseller`,{
+           const res = await fetch(`http://localhost:5000/users/allseller`,{
             headers: {
               authorization: `bearer ${localStorage.getItem('accessToken')}`
           }
@@ -33,11 +33,11 @@ const AllSeller = () => {
 
         
         const handleDeleteBook = seller => {
-          fetch(`https://reread-server.vercel.app/users/allseller/${seller._id}`, {
+          fetch(`http://localhost:5000/users/allseller/${seller._id}`, {
               method: 'DELETE', 
-              headers: {
-                  authorization: `bearer ${localStorage.getItem('accessToken')}`
-              }
+              // headers: {
+              //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+              // }
           })
           .then(res => res.json())
           .then(data => {
@@ -49,24 +49,24 @@ const AllSeller = () => {
           })
       }
 
-      const handleUpdateStatus =(id,email)=>{
+      const handleUpdateStatus =(id)=>{
 
-        fetch(`https://reread-server.vercel.app/verifysellerbook/${email}`,{
-          method:'PATCH',
+        // fetch(`http://localhost:5000/verifybookseller/${email}`,{
+        //   method:'PATCH',
          
-        })
-        .then(res => res.json())
-          .then(data => {
-            console.log(data)
-            refetch()
-              // if(data.deletedCount > 0){
-              //     refetch();
-              //     toast('successfully deleted')
-              // }
-          })
+        // })
+        // .then(res => res.json())
+        //   .then(data => {
+        //     console.log(data)
+        //     refetch()
+        //       // if(data.deletedCount > 0){
+        //       //     refetch();
+        //       //     toast('successfully deleted')
+        //       // }
+        //   })
 
-        fetch(`https://reread-server.vercel.app/users/allseller/${id}`,{
-          method:'PATCH',
+        fetch(`http://localhost:5000/users/allseller/${id}`,{
+          method:'PUT',
          
         })
         .then(res => res.json())

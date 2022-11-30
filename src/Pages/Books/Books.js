@@ -9,7 +9,7 @@ const Books = () => {
     const books = useLoaderData()
 
     const handleBookedSubmit = book =>{
-        fetch('https://reread-server.vercel.app/myorders', {
+        fetch('http://localhost:5000/myorders', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

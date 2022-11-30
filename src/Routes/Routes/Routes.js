@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
     {
         path:'/categories/:id',
         element:<PrivateRouter><Books></Books></PrivateRouter>,
-        loader:({params})=>fetch(`https://reread-server.vercel.app/categories/${params.id}`)
+        loader:({params})=>fetch(`http://localhost:5000/categories/${params.id}`)
     },
   
     {

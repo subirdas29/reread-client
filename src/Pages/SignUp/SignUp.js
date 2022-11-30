@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useToken from '../../hooks/useToken';
 // import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
@@ -12,13 +13,13 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate()
     const location = useLocation();
-    // const [createUserEmail,setCreateUserEmail] = useState('')
-    // const [token]= useToken(createUserEmail)
+    const [createUserEmail,setCreateUserEmail] = useState('')
+    const [token]= useToken(createUserEmail)
 
-    // if(token)
-    // {
-    //     navigate('/')
-    // }
+    if(token)
+    {
+        navigate(from, {replace: true});
+    }
 
 
     const from = location.state?.from?.pathname || '/';
@@ -58,9 +59,9 @@ const SignUp = () => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
-            // setCreateUserEmail(user?.email)
-            getUserToken(user?.email)
-            navigate(from, {replace: true});
+            setCreateUserEmail(user?.email)
+            // getUserToken(user?.email)
+            saveUser = (user?.displayName,user?.email)
            
           }).catch((error) => {
             const errorCode = error.code;
@@ -73,7 +74,7 @@ const SignUp = () => {
 
     const saveUser = (name,email,role)=>{
         const user = {name,email,role,status:'unverified'}
-        fetch('https://reread-server.vercel.app/users',{
+        fetch('http://localhost:5000/users',{
         method:'POST',
         headers:{
         'content-type':'application/json'
@@ -83,22 +84,9 @@ const SignUp = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
-            getUserToken(email)
-            // setCreateUserEmail(email)
-            navigate(from, {replace: true});
-            // https://reread-server.vercel.app/jwt?email=d104@gmail.com
+            setCreateUserEmail(email) 
         })
-      }
-      const getUserToken = email =>{
-        fetch(`https://reread-server.vercel.app/jwt?email=${email}`)
-        .then(res=> res.json())
-        .then(data=>{
-            if(data.accessToken){
-                localStorage.setItem('accessToken',data.accessToken)
-           
-            }
-        })
-      }
+  
 
     return (
         <div className='flex justify-center items-center h-[600px] my-10'>
