@@ -15,6 +15,7 @@ const SignUp = () => {
     const location = useLocation();
     const [createUserEmail,setCreateUserEmail] = useState('')
     const [token]= useToken(createUserEmail)
+ 
 
     if(token)
     {
@@ -86,6 +87,7 @@ const SignUp = () => {
             console.log(data)
             setCreateUserEmail(email) 
         })
+        }
   
 
     return (
