@@ -9,7 +9,7 @@ const Allbooks = ({book,handleBookedSubmit}) => {
     console.log(seller);
     
 useEffect(()=>{
-  fetch(`http://localhost:5000/users/seller/${email}`)
+  fetch(`https://reread-server.vercel.app/users/seller/${email}`)
   .then(res=>res.json())
   .then(data=>setSeller(data.user))
 },[email])

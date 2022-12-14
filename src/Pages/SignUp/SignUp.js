@@ -75,7 +75,7 @@ const SignUp = () => {
 
     const saveUser = (name,email,role)=>{
         const user = {name,email,role,status:'unverified'}
-        fetch('http://localhost:5000/users',{
+        fetch('https://reread-server.vercel.app/users',{
         method:'POST',
         headers:{
         'content-type':'application/json'
