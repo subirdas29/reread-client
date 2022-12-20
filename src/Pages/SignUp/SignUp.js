@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useToken from '../../hooks/useToken';
-// import useToken from '../../hooks/useToken';
+
 
 const SignUp = () => {
 
@@ -17,13 +17,13 @@ const SignUp = () => {
     const [token]= useToken(createUserEmail)
  
 
-    if(token)
-    {
-        navigate(from, {replace: true});
-    }
+   
 
 
     const from = location.state?.from?.pathname || '/';
+    if (token) {
+        navigate(from,{replace: true});
+    }
 
     const provider = new GoogleAuthProvider();
 
@@ -61,7 +61,7 @@ const SignUp = () => {
             const token = credential.accessToken;
             const user = result.user;
             setCreateUserEmail(user?.email)
-            // getUserToken(user?.email)
+     
             saveUser = (user?.displayName,user?.email)
            
           }).catch((error) => {

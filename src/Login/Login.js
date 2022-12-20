@@ -20,9 +20,9 @@ const Login = () => {
     const [token] = useToken(loginEmail);
     console.log('kjasf',loginEmail);
 
-    if (token) {
-        navigate(from, {replace: true});
-    }
+    // if (token) {
+        
+    // }
 
 
     const [error, setError] = useState('')
@@ -37,6 +37,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 setLoginEmail(user.email)
+                navigate(from, {replace: true});
             })
             .catch((error) => {
                 console.log(error.message)
@@ -54,6 +55,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 setLoginEmail(user?.email)
+                navigate(from, {replace: true});
 
             }).catch((error) => {
                 const errorCode = error.code;
@@ -96,7 +98,7 @@ const Login = () => {
                     {errors.password && <p className="text-red-600" role="alert">{errors.password?.message}</p>}
                     <input type="submit" className='btn btn-accent w-full mt-4' value='Login' />
                 </form>
-                <p className='mt-3 text-center'>New to Doctors Portal? <Link className='text-secondary' to='/signup'>Create New Account</Link></p>
+                <p className='mt-3 text-center'>New to ReRead? <Link className='text-secondary' to='/signup'>Create New Account</Link></p>
                 <div className="divider my-6">OR</div>
                 <button type="submit" className='btn btn-outline w-full ' onClick={handleGoogleSignUp}>Continue with Google</button>
             </div>

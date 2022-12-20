@@ -36,7 +36,7 @@ const MyBooks = () => {
     return <div>loading</div>
   }
 
-  const handleDeleteBook = book => {
+  const handleDeleteBook = (book) => {
     fetch(`https://reread-server.vercel.app/allbooks/${book._id}`, {
       method: 'DELETE',
       // headers: {

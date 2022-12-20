@@ -1,14 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const MyOrders = () => {
+  const { user } = useContext(AuthContext)
 
   const { data: myorders, isLoading, refetch } = useQuery({
       
     queryKey: ['allbooks'],
     queryFn: async () => {
         try {
-            const res = await fetch('https://reread-server.vercel.app/myorders', {
+            const res = await fetch(`https://reread-server.vercel.app/myorders`, {
 
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -64,15 +66,15 @@ const MyOrders = () => {
               </div>
               <div>
                 <div className="font-bold">{myorder.name}</div>
-                <div className="text-sm opacity-50">{myorder.resale_price}</div>
               </div>
             </div>
           </td>
           <td>
-            BuyNOw
-            <br/>
-           
+          <div className="">{myorder.resale_price}</div> 
           </td>
+          <td>
+            <div className='btn'>Buy Now</div>
+            </td>
          
           
         </tr>)

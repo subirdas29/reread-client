@@ -11,17 +11,9 @@ const PrivateRouter = ({children}) => {
     if(loading)
     {
         return <>
-        {/* <Vortex
-  visible={true}
-  height="80"
-  width="80"
-  ariaLabel="vortex-loading"
-  wrapperStyle={{}}
-  wrapperClass="vortex-wrapper"
-  colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
-/> */}
+      
 
-<div>loading...</div>
+<div><progress className="progress w-56"></progress></div>
         </>
     }
 

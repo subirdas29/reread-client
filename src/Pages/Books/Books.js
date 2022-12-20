@@ -1,14 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 import Allbooks from './Allbooks';
 
 const Books = () => {
+    const{user}=useContext(AuthContext)
 
     const books = useLoaderData()
 
-    const handleBookedSubmit = book =>{
+    const handleBookedSubmit = (book) =>{
         fetch('https://reread-server.vercel.app/myorders', {
                         method: 'POST',
                         headers: {

@@ -5,21 +5,6 @@ import AdvertismentCard from './AdvertismentCard';
 
 const Advertisement = () => {
 
-    const handleBookedSubmit = book =>{
-        fetch('https://reread-server.vercel.app/myorders', {
-                        method: 'POST',
-                        headers: {
-                            'content-type': 'application/json',
-                            authorization: `bearer ${localStorage.getItem('accessToken')}`
-                        },
-                        body: JSON.stringify(book)
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            console.log(data)
-                            toast('Successfully Booked')
-                        })
-    }
 
 
     const { data: adBooks, isLoading, refetch } = useQuery({
@@ -47,6 +32,22 @@ const Advertisement = () => {
             console.log(adBooks)
         }
     });
+    
+    const handleBookedSubmit = book =>{
+        fetch('https://reread-server.vercel.app/myorders', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                            authorization: `bearer ${localStorage.getItem('accessToken')}`
+                        },
+                        body: JSON.stringify(book)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            toast('Successfully Booked')
+                        })
+    }
     return (
         <div>
             <h2 className='text-4xl font-bold text-center'>Advertisement</h2>

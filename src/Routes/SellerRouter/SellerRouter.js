@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
-// import { Vortex } from  'react-loader-spinner'
-// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 import useSeller from '../../hooks/useSeller';
 
 
@@ -13,17 +12,9 @@ const SellerRouter = ({children}) => {
     if(loading || sellerLoading)
     {
         return <>
-        {/* <Vortex
-  visible={true}
-  height="80"
-  width="80"
-  ariaLabel="vortex-loading"
-  wrapperStyle={{}}
-  wrapperClass="vortex-wrapper"
-  colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
-/> */}
+    
 
-<div>loading...</div>
+<div><progress className="progress w-56"></progress></div>
         </>
     }
 
@@ -31,7 +22,7 @@ const SellerRouter = ({children}) => {
         return children;
     }
 
-    return <Navigate to="/login" state={{from: location}} replace></Navigate>;
+    // return <Navigate to="/login" state={{from: location}} replace></Navigate>;
 };
 
 export default SellerRouter;
