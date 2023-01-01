@@ -14,9 +14,9 @@ import { FreeMode, Pagination } from "swiper";
 
 const RecomandationOfBooks = () => {
     return (
-       <div className="bg-[#F7F7F7] p-10" >
+       <div className=" p-5 bg-[#F7F7F7] mb-20" >
         <h2 className="text-4xl font-bold text-center mb-10">Recomandation Of Books</h2>
-         <div className="mx-auto max-w-screen-xl mb-20 ">
+         <div className="mx-auto max-w-screen-xl ">
             <Swiper
         slidesPerView={5}
         spaceBetween={30}

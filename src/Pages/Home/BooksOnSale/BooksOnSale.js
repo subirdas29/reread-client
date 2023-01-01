@@ -1,69 +1,76 @@
-import React from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
+
+// import styles bundle
+
+
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
+// import "swiper/swiper.min.css";
+
+// import "swiper/components/pagination/pagination.min.css"
+// import "swiper/components/navigation/navigation.min.css"
+import "swiper/components/navigation/navigation.min.css"
+
 
 import "./styles.css";
 
+
+// import Swiper core and required modules
+import SwiperCore, {
+  Pagination,Navigation
+} from 'swiper/core';
+import { useState } from "react";
+
+// install Swiper modules
+SwiperCore.use([Pagination,Navigation]);
+
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+
 
 
 const BooksOnSale = () => {
+    const [swiperRef, setSwiperRef] = useState(null);
+
+  let appendNumber = 4;
+  let prependNumber = 1;
+
+  const prepend2 = () => {
+    swiperRef.prependSlide([
+      '<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>',
+      '<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>'
+    ]);
+  }
+
+  const prepend = () => {
+    swiperRef.prependSlide('<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>');
+  }
+
+  const append = () => {
+    swiperRef.appendSlide('<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>');
+  }
+
+  const append2 = () => {
+    swiperRef.appendSlide([
+      '<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>',
+      '<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>'
+    ]);
+  }
+  
     return (
-        <div className='p-10'>
-            <h2 className="text-4xl font-bold text-center mb-10">Recomandation Of Books</h2>
-            <div>
-            <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 2,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src="https://i.ibb.co/4mYknX0/Adapted-Reader.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-      </Swiper>
+        <div className='p-10 bg-[#F7F7F7] mx-32'>
+            <h2 className="text-4xl font-bold text-center mb-10">Books On Sale</h2>
+            <Swiper onSwiper={setSwiperRef} slidesPerView={3} centeredSlides={true} spaceBetween={30} pagination={{
+  "type": "fraction"
+}} navigation={true} className="mySwiper">
+    <SwiperSlide><img src="https://i.ibb.co/M5yhydL/The-girl-who-drank.png" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/4mYknX0/Adapted-Reader.png" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/DgrG62g/054521579-X-01-SCLZZZZZZZ-SX500.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/RHVrqGM/Untitled-2.png" alt=""/></SwiperSlide>
+  </Swiper>
+
+
         </div>
-        </div>
+    
     );
 };
 
