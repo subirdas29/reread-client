@@ -50,8 +50,8 @@ const Advertisement = () => {
     }
     return (
         <div>
-            <h2 className='text-4xl font-bold text-center '>Advertisement</h2>
-        <div className='my-20 grid grid-cols-2 md:grid-cols-3 gap-10 mx-auto max-w-screen-xl'>
+            <h2 className='text-4xl font-bold text-center  '>Advertisement</h2>
+        <div className='my-20 grid grid-cols-2 md:grid-cols-3 gap-10 mx-auto max-w-screen-xl '>
            
            {
              adBooks?.map(book=> <AdvertismentCard key={book._id} book={book}  handleBookedSubmit={handleBookedSubmit}></AdvertismentCard>)
