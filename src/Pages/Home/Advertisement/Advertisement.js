@@ -49,7 +49,7 @@ const Advertisement = () => {
                         })
     }
     return (
-        <div className='bg-[#F7F7F7] py-16'>
+        <div className='bg-[#FBF1EB] py-16'>
             <h2 className='text-4xl font-bold text-center  mb-10 '>Advertisement</h2>
         <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-10 '>
            

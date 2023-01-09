@@ -9,18 +9,23 @@ import "swiper/css/pagination";
 
 
 // import required modules
-import { FreeMode, Navigation, Pagination } from "swiper";
+import { Autoplay, FreeMode, Navigation, Pagination, Scrollbar } from "swiper";
 
 
 const RecomandationOfBooks = () => {
     return (
-       <div className="py-20 bg-[#F7F7F7] mb-20" >
+       <div className="py-20 bg-[#FBF1EB] mb-20" >
         <h2 className="text-4xl font-bold text-center mb-10">Recomandation Of Books</h2>
          <div className="mx-16 ">
             <Swiper
         slidesPerView={4}
         spaceBetween={30}
+       
         // freeMode={true}
+        autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
         navigation={true}
         pagination={{
           clickable: true,
@@ -39,9 +44,17 @@ const RecomandationOfBooks = () => {
             slidesPerView: 2,
             slidesPerGroup: 2,
           },
+          280: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
+          100: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
           
         }}
-        modules={[ Pagination,Navigation]}
+        modules={[ Pagination,Navigation,Autoplay]}
         className="mySwiper "
       >
         <SwiperSlide><img src="https://i.ibb.co/M5yhydL/The-girl-who-drank.png" alt=""/></SwiperSlide>
