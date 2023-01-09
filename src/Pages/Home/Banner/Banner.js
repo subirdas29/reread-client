@@ -1,11 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import book_read_img from '../../../assets/Banner-Image/banner-book-img.png';
+import bg_banner_img from '../../../assets/Banner-Image/Banner-background.jpg';
 
 const Banner = () => {
     return (
         <div className="hero min-h-screen" 
-        style={{ backgroundImage: `url("https://i.ibb.co/2yWkq0G/Untitled-1.jpg")` }}
+        style={{ backgroundImage: `url(${bg_banner_img})` }}
         >
           <div className='flex flex-col sm:flex-col md:flex-col lg:flex-row'>
           
@@ -21,7 +23,7 @@ const Banner = () => {
             <FontAwesomeIcon className='ml-5' icon={faCartShopping} />
             </button></div>
          
-          <div className='w-full lg:w-1/2  flex justify-end'><img className='w-full' src='https://i.ibb.co/BtyZ7HC/Untitled-1.png'/>
+          <div className='w-full lg:w-1/2  flex justify-end'><img className='w-full' src={book_read_img}/>
           </div>
         </div>
         </div>
