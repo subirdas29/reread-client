@@ -17,9 +17,9 @@ const AllCategories = () => {
     },[])
 
     return (
-       <div className=' my-10'>
-         <h2 className='text-5xl font-bold text-center'>categories</h2>
-       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto max-w-screen-xl '>
+       <div className=' my-24'>
+         <h2 className='text-4xl font-bold text-center'>Categories</h2>
+       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-10'>
         
 
         {

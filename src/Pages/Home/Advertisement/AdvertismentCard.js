@@ -8,7 +8,7 @@ const AdvertismentCard = ({book, handleBookedSubmit}) => {
     {
 
         advertisement ? <div className="card card-compact bg-base-100 shadow-xl">
-        <figure><img className='h-96 w-96' src={img} alt="Shoes" /></figure>
+        <figure><img className='h-64 w-64 lg:h-96 lg:w-96' src={img} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">Book Name: {name}</h2>
           
