@@ -15,11 +15,11 @@ const DealsWeek = () => {
         })
     },[])
     return (
-        <div className='bg-[#FBF1EB] '>
+        <div>
             <p className='text-4xl font-bold text-center  mb-10'>Best Deals Of The Week!</p>
-            <div className='grid grid-cols-3 mx-10 '>
+            <div className='grid lg:grid-cols-3 mx-10 '>
          
-          <div className="col-span-2 w-full relative"
+          <div className="lg:col-span-2 w-full relative"
         //    style={{ backgroundImage: `url(${bg_banner_img})` }}
            >
                 <img src={bg_banner_img}/>
