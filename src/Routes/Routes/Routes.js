@@ -20,6 +20,7 @@ import SellerRouter from "../SellerRouter/SellerRouter";
 import MyBooks from "../../Pages/Dashboard/Seller/MyBooks";
 import AddBook from "../../Pages/Dashboard/Seller/AddBook";
 import Blog from "../../Blog/Blog";
+import DealsWeek from "../../Pages/Home/Deals of the week/DealsWeek";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ export const router = createBrowserRouter([
         element:<PrivateRouter><Books></Books></PrivateRouter>,
         loader:({params})=>fetch(`https://reread-server.vercel.app/categories/${params.id}`)
     },
+    // {
+    //     path:'/categories/:id',
+    //     element:<DealsWeek></DealsWeek>,
+    //     loader:({params})=>fetch(`https://reread-server.vercel.app/categories/${params.id}`)
+    // },
   
     {
         path:'/about',
