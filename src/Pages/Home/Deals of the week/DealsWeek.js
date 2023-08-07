@@ -36,7 +36,7 @@ const DealsWeek = () => {
              
             </h1>
 
-            <button className="bg-white lg:px-14 md:px-8 sm:px-8 px-4 lg:mb-5 md:mt-5 mt-5 rounded-full text-black hover:text-white hover:outline outline-1  outline-white lg:py-3 md:py-2 sm:py-2 py-1 lg:text-xl md:text-xl sm:text-xl text-sm hover:bg-[#F44344] ">
+            <button className="bg-white lg:px-14 md:px-8 sm:px-8 px-4 lg:mb-5 md:mt-5 mt-5 rounded-full text-black hover:text-white hover:outline outline-1  outline-white lg:py-3 md:py-2 sm:py-2 py-1 lg:text-lg  text-sm hover:bg-[#F44344] ">
               See More
             </button>
           </div>
