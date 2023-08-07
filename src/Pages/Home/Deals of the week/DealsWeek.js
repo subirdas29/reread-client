@@ -24,8 +24,8 @@ const DealsWeek = () => {
           className="lg:col-span-2 w-full relative"
           //    style={{ backgroundImage: `url(${bg_banner_img})` }}
         >
-          <img className="lg:min-h-[1020px] min-h-[600px] " src={bg_banner_img} />
-          <div className=" w-full  my-auto lg:p-20 md:p-14 sm:p-12 px-10 text-center absolute lg:bottom-44 md:bottom-40 sm:bottom-32 bottom-14  text-[#FFFFFF] grid justify-items-start ">
+          <img className="lg:min-h-[1020px] min-h-[600px] lg:mb-0 mb-6 " src={bg_banner_img} />
+          <div className=" w-full  my-auto lg:p-20 md:p-14 sm:p-12 px-10 text-center absolute lg:bottom-44 md:bottom-40 sm:bottom-32 bottom-20  text-[#FFFFFF] grid justify-items-start ">
             <h1 className="lg:mb-5 mb-2 lg:text-xl md:text-sm sm:text-sm text-xs text-left">NEW YEAR, NEW BOOKS</h1>
             <h1 className="lg:mb-5 mb-2  font-bold lg:text-5xl md:text-3xl text-2xl text-left">
               The 19 Best New YA Books of January
