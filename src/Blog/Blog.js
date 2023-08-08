@@ -6,21 +6,21 @@ const Blog = () => {
     return (
 
 <div>
-<div className="hero min-h-[300px] border-2" 
+<div className="hero  " 
         style={{ backgroundImage: `url("https://i.ibb.co/2yWkq0G/Untitled-1.jpg")` }}
         >
          
 
-          <div className='flex flex-col sm:flex-col md:flex-col lg:flex-row'>
+          <div className='flex flex-col sm:flex-col md:flex-col lg:flex-row p-10'>
           
         {/* <div className="hero-overlay bg-opacity-60"></div> */}
         {/* <div className="hero-content text-center text-neutral-content"> */}
           <div className=" w-full lg:w-full  my-auto p-20 text-center">
-          <h2 className='text-8xl font-bold'>Blogs</h2>
+          <h2 className='text-7xl font-bold'>Blogs</h2>
           </div>
          
          
-          <div className='w-full lg:w-full  flex justify-end'><img className='w-full' src='https://i.ibb.co/DQw0d5R/6721756.png '/>
+          <div className='w-full lg:w-full  flex justify-end'><img className='w-full' src='https://i.ibb.co/Tgd92Wz/blogimage.png'/>
           </div>
         
         </div>
@@ -53,7 +53,7 @@ const Blog = () => {
 			</div>
 		</a>
 		<a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-100 border drop-shadow-xl">
-			<img role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://i.ibb.co/Rb97Fm4/banner.jpg" />
+			<img role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://i.ibb.co/3ffwF9n/banner-1.jpg" />
 			<div className="p-6 space-y-2">
 				<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline hover:text-[#F44344]">In usu laoreet repudiare legendos</h3>
 				<span className="text-xs dark:text-gray-400">January 23, 2021</span>
