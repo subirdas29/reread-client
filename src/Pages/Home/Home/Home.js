@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import Advertisement from '../Advertisement/Advertisement';
 import RecomandationOfBooks from '../RecomandationOfBooks/RecomandationOfBooks';
 import DealsWeek from '../Deals of the week/DealsWeek';
+import JoinTheCommunity from '../Jointhecommunity/JoinTheCommunity';
 // import RecomandationOfBooks from '../RecomandationOfBooks/RecomandationOfBooks';
 
 
@@ -16,6 +17,7 @@ const Home = () => {
           <DealsWeek></DealsWeek>
           <Advertisement></Advertisement>
           <RecomandationOfBooks></RecomandationOfBooks>
+          <JoinTheCommunity></JoinTheCommunity>
           
         </div>
     );

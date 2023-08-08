@@ -17,7 +17,7 @@ const RecomandationOfBooks = () => {
     return (
        <div className="py-20 bg-[#FBF1EB] mb-20" >
         <h2 className="text-4xl font-bold text-center mb-10">Recomandation Of Books</h2>
-         <div className="mx-16 ">
+         <div className="mx-10 ">
             <Swiper
         slidesPerView={4}
         spaceBetween={30}
