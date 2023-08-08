@@ -57,16 +57,16 @@ const RecomandationOfBooks = () => {
         modules={[ Pagination,Navigation,Autoplay]}
         className="mySwiper "
       >
-        <SwiperSlide><img src="https://i.ibb.co/M5yhydL/The-girl-who-drank.png" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/4mYknX0/Adapted-Reader.png" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/DgrG62g/054521579-X-01-SCLZZZZZZZ-SX500.jpg" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/RHVrqGM/Untitled-2.png" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/TrjBxBw/Untitled-3.png" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/cLH57KD/61a-TMGop8-VL.jpg" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/cLH57KD/61a-TMGop8-VL.jpg" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/cLH57KD/61a-TMGop8-VL.jpg" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/cLH57KD/61a-TMGop8-VL.jpg" alt=""/></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/cLH57KD/61a-TMGop8-VL.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/xLGH7zv/Historical2.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/Jzghwxq/Children2.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/cF4y7m8/Historical1.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/rGHQtz7/Children1.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/5KZwW6D/fiction1.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/hyxcsnk/fiction2.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/xLGH7zv/Historical2.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/rGHQtz7/Children1.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/hyxcsnk/fiction2.jpg" alt=""/></SwiperSlide>
+        <SwiperSlide><img src="https://i.ibb.co/cF4y7m8/Historical1.jpg" alt=""/></SwiperSlide>
       </Swiper>
         </div>
        </div>
