@@ -2,20 +2,20 @@
     {
         "category_id":"1",
         "cat_name":"Literature & Fiction",
-        "cat_img":"https://i.ibb.co/XyKP1m3/jbareham-201014-1047-scifi-books-essentials-02.jpg"
+        "cat_img":"https://i.ibb.co/CmDmtDb/jbareh.jpg"
 
     },
     {
         "category_id":"2",
         "cat_name":"Children",
-        "cat_img":"https://i.ibb.co/SQYY0Dg/shapiro-npr2-wide-27c7505f6eb0185ab39fe8b7cc5167ea218f3990-s1100-c50.jpg"
+        "cat_img":"https://i.ibb.co/b1JHdV1/shapiro-n.jpg"
       
 
     },
     {
         "category_id":"3",
         "cat_name":"Historical",
-        "cat_img":"https://i.ibb.co/vmC9g71/old-book-flying-letters-magic-light-background-bookshelf-library-ancient-books-as-symbol-knowledge-h.jpg"
+        "cat_img":"https://i.ibb.co/XWFJYzt/oldbook.jpg"
 
     }
 ]

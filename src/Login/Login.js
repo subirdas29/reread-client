@@ -18,7 +18,6 @@ const Login = () => {
 
     const [loginEmail, setLoginEmail] = useState('');
     const [token] = useToken(loginEmail);
-    console.log('kjasf',loginEmail);
 
     // if (token) {
         

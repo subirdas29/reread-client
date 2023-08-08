@@ -1,10 +1,10 @@
 [
     {
         "category_id": "1",
-        "cat_name":"Literature & Fiction",
+        "cat_name":"Fiction",
         "book_id": "1",
         "name": "The Book of Longings: A Novel",
-        "img": "https://i.ibb.co/cLH57KD/61a-TMGop8-VL.jpg",
+        "img": "https://i.ibb.co/5KZwW6D/fiction1.jpg",
         "location": "USA",
         "resale_price": "$50",
         "original_price": "$100",
@@ -14,7 +14,7 @@
     },
     {
         "category_id": "1",
-        "cat_name":"Literature & Fiction",
+        "cat_name":"Fiction",
         "book_id": "2",
         "name": "My Dearest Darkest",
         "img": "https://i.ibb.co/HzL4rqq/32.jpg",
