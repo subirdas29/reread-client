@@ -10,7 +10,7 @@ const Item = styled.div`
   border: 1px solid
     ${({ active }) => (active ? "rgba(0,0,0,.2)" : "rgba(0,0,0,.02)")};
   color: #f44344;
-  background-color: #ffe9e9;
+  background-color: #fff3d9;
   &:hover {
     cursor: pointer;
   }

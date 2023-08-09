@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Item from "./Item";
+import Item from "../Slider/Item";
 
 const SimpleItem = styled(Item)`
   font-family: Comic Sans MS, Comic Sans, cursive;
