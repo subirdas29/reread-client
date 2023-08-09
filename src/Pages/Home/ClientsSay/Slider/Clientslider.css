@@ -14,3 +14,33 @@
     box-shadow: 0 0 1px 3px rgb(244, 67, 68) !important;
 
 }
+.hNtcxH
+{
+    padding:24px !important;
+}
+@media only screen and (max-width: 639px) {
+
+    .jtKTCe {
+        margin-top: -70px !important;
+    }
+    
+    }
+
+  
+    @media (min-width: 515px) and (max-width: 530px) 
+    {
+
+        .jtKTCe {
+            margin-top: -20px !important;
+        }
+        
+        }
+
+        @media (min-width: 457px) and (max-width: 514px) 
+    {
+
+        .jtKTCe {
+            margin-top: 20px !important;
+        }
+        
+        }
