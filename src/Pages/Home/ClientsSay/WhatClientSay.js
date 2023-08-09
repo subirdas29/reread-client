@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
 // import {Playground, Props } from 'docz';
+import '../ClientsSay/Slider/Clientslider.css'
 import Item from "./Slider/SimpleItem";
 
 const WhatClientSay = () => {
