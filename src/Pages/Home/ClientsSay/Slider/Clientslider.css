@@ -1,3 +1,16 @@
 .kXteup:hover:enabled, .kXteup:focus:enabled { 
     background-color: rgb(244, 67, 68) !important;
 }
+.cVXxbE:hover, .cVXxbE:focus {
+    
+    box-shadow: 0 0 1px 3px rgb(244, 67, 68) !important;
+}
+.cVXxbE
+{
+    background-color:rgb(255 0 0 / 50%) !important;
+    box-shadow: 0 0 1px 3px rgb(244, 67, 68) !important;
+}
+.ezKHIn:hover{
+    box-shadow: 0 0 1px 3px rgb(244, 67, 68) !important;
+
+}
