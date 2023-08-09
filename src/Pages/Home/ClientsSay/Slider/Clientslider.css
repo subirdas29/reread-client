@@ -17,11 +17,12 @@
 .hNtcxH
 {
     padding:24px !important;
+    margin:0px !important;
 }
 @media only screen and (max-width: 639px) {
 
     .jtKTCe {
-        margin-top: -70px !important;
+        margin-top: 14px !important;
     }
     
     }
@@ -44,3 +45,5 @@
         }
         
         }
+
+      
