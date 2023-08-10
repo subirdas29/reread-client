@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Skeleton from 'react-loading-skeleton'; // Import the Skeleton component
 import Categoriesloaded from './Categoriesloaded';
 
 const AllCategories = () => {
@@ -23,7 +22,8 @@ const AllCategories = () => {
     <div className='my-24' id='cat'>
       <h2 className='text-4xl font-bold text-center'>Categories</h2>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-10 my-10'>
-        {isLoading ? (
+        {
+        isLoading ? (
           // Display skeleton loaders while data is being fetched
           <>
     <div className="flex basis-1/3 flex-col m-8 rounded shadow-md sm:w-80 animate-pulse h-96">
@@ -67,7 +67,7 @@ export default AllCategories;
 
 
 
-// import React, { useEffect, useState } from 'react';
+
 // import Categoriesloaded from './Categoriesloaded';
 
 // const AllCategories = () => {

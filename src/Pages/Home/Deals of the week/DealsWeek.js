@@ -6,12 +6,14 @@ const DealsWeek = () => {
   // const dealsBook = useLoaderData()
   // console.log(dealsBook)
   const [dealsBook, setDealsBook] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("books.json")
       .then((res) => res.json())
       .then((data) => {
         setDealsBook(data);
+        setIsLoading(false)
       });
   }, []);
   return (
@@ -43,12 +45,94 @@ const DealsWeek = () => {
         </div>
 
         <div className="">
-          {dealsBook?.map((dealBook) => (
+
+          
+          {
+          isLoading ? (
+            // Display skeleton loaders while data is being fetched
+            <>
+      <div className=" animate-pulse">
+	<div className="flex p-4 space-x-4 sm:px-8">
+		<div className="flex-shrink-0 w-24 h-36 rounded-t rounded-b dark:bg-[#d8d8d8]"></div>
+		<div className="flex-1 py-2 space-y-4">
+			<div className="w-2/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-full h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/4 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+		</div>
+	</div>
+	
+</div>
+      <div className=" animate-pulse">
+	<div className="flex p-4 space-x-4 sm:px-8">
+		<div className="flex-shrink-0 w-24 h-36 rounded-t rounded-b dark:bg-[#d8d8d8]"></div>
+		<div className="flex-1 py-2 space-y-4">
+			<div className="w-2/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-full h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/4 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+		</div>
+	</div>
+	
+</div>
+      <div className=" animate-pulse">
+	<div className="flex p-4 space-x-4 sm:px-8">
+		<div className="flex-shrink-0 w-24 h-36 rounded-t rounded-b dark:bg-[#d8d8d8]"></div>
+		<div className="flex-1 py-2 space-y-4">
+			<div className="w-2/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-full h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/4 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+		</div>
+	</div>
+	
+</div>
+      <div className=" animate-pulse">
+	<div className="flex p-4 space-x-4 sm:px-8">
+		<div className="flex-shrink-0 w-24 h-36 rounded-t rounded-b dark:bg-[#d8d8d8]"></div>
+		<div className="flex-1 py-2 space-y-4">
+			<div className="w-2/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-full h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/4 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+		</div>
+	</div>
+	
+</div>
+      <div className=" animate-pulse">
+	<div className="flex p-4 space-x-4 sm:px-8">
+		<div className="flex-shrink-0 w-24 h-36 rounded-t rounded-b dark:bg-[#d8d8d8]"></div>
+		<div className="flex-1 py-2 space-y-4">
+			<div className="w-2/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-full h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/4 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+		</div>
+	</div>
+	
+</div>
+      <div className=" animate-pulse">
+	<div className="flex p-4 space-x-4 sm:px-8">
+		<div className="flex-shrink-0 w-24 h-36 rounded-t rounded-b dark:bg-[#d8d8d8]"></div>
+		<div className="flex-1 py-2 space-y-4">
+			<div className="w-2/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-full h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/4 h-3 rounded dark:bg-[#d8d8d8]"></div>
+			<div className="w-3/5 h-3 rounded dark:bg-[#d8d8d8]"></div>
+		</div>
+	</div>
+	
+</div>
+  
+    </>
+          ) : (
+          dealsBook?.map((dealBook) => (
             <AllDealsBook
               key={dealBook.book_id}
               dealBook={dealBook}
             ></AllDealsBook>
-          ))}
+          ))
+        )}
         </div>
         <div></div>
       </div>
