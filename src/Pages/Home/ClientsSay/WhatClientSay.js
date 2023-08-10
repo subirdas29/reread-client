@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
 // import {Playground, Props } from 'docz';
-import '../ClientsSay/Slider/Clientslider.css'
+import './Slider/Clientslider.css'
 import Item from "./Slider/SimpleItem";
 import img1 from "../../../assets/clientsimages/pic01.jpg";
 import img2 from "../../../assets/clientsimages/pic02.jpg";
