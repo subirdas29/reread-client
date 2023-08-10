@@ -15,7 +15,7 @@ import { Autoplay, FreeMode, Navigation, Pagination, Scrollbar } from "swiper";
 
 const RecomandationOfBooks = () => {
     return (
-       <div className="py-20 bg-[#FBF1EB] mb-20" >
+       <div className="my-32 py-16 bg-[#FBF1EB] mb-20" >
         <h2 className="text-4xl font-bold text-center mb-10">Recomandation Of Books</h2>
          <div className="mx-10 ">
             <Swiper

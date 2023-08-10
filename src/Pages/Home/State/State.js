@@ -4,7 +4,7 @@ import React from 'react';
 
 const State = () => {
     return (
-        <section className="my-16 mx-10 dark:text-gray-100">
+        <section className="my-32 mx-10 dark:text-gray-100">
         <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
             <div className="flex p-4 space-x-4 rounded-lg md:space-x-6  dark:text-black outline-dashed outline-1 outline-[#f44344] ">
                 <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 border drop-shadow-md ">
