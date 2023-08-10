@@ -6,6 +6,7 @@ import RecomandationOfBooks from '../RecomandationOfBooks/RecomandationOfBooks';
 import DealsWeek from '../Deals of the week/DealsWeek';
 import JoinTheCommunity from '../Jointhecommunity/JoinTheCommunity';
 import WhatClientSay from '../ClientsSay/WhatClientSay';
+import State from '../State/State';
 // import RecomandationOfBooks from '../RecomandationOfBooks/RecomandationOfBooks';
 
 
@@ -16,10 +17,12 @@ const Home = () => {
           <Banner></Banner>
           <AllCategories></AllCategories>
           <DealsWeek></DealsWeek>
-          <Advertisement></Advertisement>
           <RecomandationOfBooks></RecomandationOfBooks>
-          <JoinTheCommunity></JoinTheCommunity>
+          <Advertisement></Advertisement>
           <WhatClientSay></WhatClientSay>
+          <State></State>
+          <JoinTheCommunity></JoinTheCommunity>
+          
           
         </div>
     );
