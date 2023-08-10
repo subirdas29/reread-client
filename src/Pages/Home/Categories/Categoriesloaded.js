@@ -15,7 +15,7 @@ const Categoriesloaded = ({category}) => {
           <div className="flex justify-center gap-2 my-5">     
           
 
-            <Link to={`/categories/${category_id}`}><button className=" bg-white  px-8  rounded-t-lg rounded-b-lg  text-black hover:text-white hover:outline outline-1  outline-white py-2 lg:text-lg  text-sm font-semibold hover:bg-[#F44344] drop-shadow-lg">Visit Now</button></Link>
+            <Link to={`/categories/${category_id}`}><button className=" bg-white px-8  rounded-t-lg rounded-b-lg  text-black hover:text-white hover:outline outline-1  outline-white py-3 lg:text-lg  text-sm font-semibold hover:bg-[#F44344] drop-shadow-lg">Visit Now</button></Link>
           </div>
         </div>
       </div>
