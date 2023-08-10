@@ -4,3 +4,8 @@
     margin-top: 16px;
 position:static !important;
 }
+.swiper-pagination-bullet-active {
+
+background: rgb(244, 67, 68) !important;
+box-shadow: 0 0 1px 3px rgb(244, 67, 68) !important
+}
