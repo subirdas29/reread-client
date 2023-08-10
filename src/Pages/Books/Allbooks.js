@@ -32,7 +32,7 @@ useEffect(()=>{
       }
  
     <div className="card-actions justify-center">
-      <button className="btn btn-primary" onClick={()=>handleBookedSubmit(book)}>Book Now</button>
+      <button className="bg-black  px-4  rounded-t-lg rounded-b-lg py-2  text-white hover:text-white hover:outline outline-1  outline-white text-base hover:bg-[#F44344] drop-shadow-lg" onClick={()=>handleBookedSubmit(book)}>Book Now</button>
     </div>
   </div>
 </div>
