@@ -1,10 +1,10 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
-// import {Playground, Props } from 'docz';
+
 import './Slider/Clientslider.css'
-// import style from './Slider/Clientslider.module.css';
+
 import Item from "./Slider/SimpleItem";
-import Button from "./Slider/Button";
+
 import img1 from "../../../assets/clientsimages/pic01.jpg";
 import img2 from "../../../assets/clientsimages/pic02.jpg";
 import img3 from "../../../assets/clientsimages/pic03.jpg";
