@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineSearch,AiOutlineUser } from 'react-icons/ai';
 import { MdMenu, MdClose } from 'react-icons/md';
 import { AuthContext } from '../../../Context/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
@@ -55,19 +55,19 @@ const Navbar = () => {
    
     const menuItems =
     <React.Fragment>
-    <li><Link to="/">Home</Link></li>
-    <li><a href='#cat'>Categories</a></li>
-    <li><Link to="/blog">Blog</Link></li>
+    <li><Link to="/" className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>Home</Link></li>
+    <li><a href='#cat' className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>Categories</a></li>
+    <li><Link to="/blog" className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>Blog</Link></li>
 
     {
         isAdmin?
         <>
-        <li><Link to="/dashboard/allbuyer">DashBoard</Link></li>
+        <li><Link to="/dashboard/allbuyer"className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>DashBoard</Link></li>
         </>:
         
-         isSeller ? <li><Link to="/dashboard/mybook">DashBoard</Link></li>
+         isSeller ? <li><Link to="/dashboard/mybook"className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>DashBoard</Link></li>
          :
-         <li><Link to="/dashboard/myorder">DashBoard</Link></li>
+         <li><Link to="/dashboard/myorder"className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>DashBoard</Link></li>
          
     }
 
@@ -76,13 +76,13 @@ const Navbar = () => {
         user?.uid?
        <>
       
-        <li><button onClick={handleLogOut}>Logout</button></li>
+        <li><button onClick={handleLogOut}className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>Logout</button></li>
         <span className='text-white'>{user?.displayName}</span>
        </> 
        
         : <>
-        <li><Link to="/login">Login</Link></li>
-    <li><Link to="/signup">SignUp</Link></li>
+        <li><Link to="/login"className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>Login</Link></li>
+    <li><Link to="/signup"className=' hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold'>SignUp</Link></li>
         </>
        
     }
@@ -115,17 +115,18 @@ const Navbar = () => {
                         <input
                             type="text"
                             placeholder="Search"
-                            className="rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-400"
+                            className="rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-[#f44344]"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
                             <AiOutlineSearch size={20} />
                         </span>
                     </div>
                    
-                    <AiOutlineHeart size={24} className="mx-2 cursor-pointer" />
+                    <AiOutlineHeart size={24} className="mx-2 cursor-pointer hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold" />
 
                    
-                    <AiOutlineShoppingCart size={24} className="mx-2 cursor-pointer" />
+                    <AiOutlineShoppingCart size={24} className="mx-2 cursor-pointer hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold" />
+                    <AiOutlineUser size={24} className="mx-2 cursor-pointer hover:text-[#f44344] focus:text-[#f44344] bg-transparent font-bold" />
 
                    
                 </div>
