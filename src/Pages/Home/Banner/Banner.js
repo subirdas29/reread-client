@@ -6,7 +6,7 @@ import bg_banner_img from '../../../assets/Banner-Image/Banner-background.jpg';
 
 const Banner = () => {
     return (
-        <div className=" 
+        <div id="banner" className=" 
         w-full bg-cover " 
         style={{ backgroundImage: `url(${bg_banner_img})` }}
         >

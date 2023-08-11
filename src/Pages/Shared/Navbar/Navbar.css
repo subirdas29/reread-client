@@ -1,0 +1,19 @@
+/* Set initial position to be on top of the banner and transparent background */
+.navbar {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    padding:0;
+   
+    transition: background-color 0.3s ease, position 0.3s ease;
+    z-index: 2; /* Set z-index to be on top of other sections */
+}
+
+/* Fix the navbar at the top */
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    background-color: #FFFFFF; /* Change to your desired solid background color */
+    z-index: 50; /* Increase z-index to keep it above other sections */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
