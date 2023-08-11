@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineSearch } from 'react-icons/ai';
+import { MdMenu, MdClose } from 'react-icons/md';
 import { AuthContext } from '../../../Context/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
 import useSeller from '../../../hooks/useSeller';
@@ -12,6 +14,12 @@ const Navbar = () => {
 
     const [isFixed, setIsFixed] = useState(false);
     const [isTransparent, setIsTransparent] = useState(true);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to track dropdown menu
+
+    // Toggle the dropdown menu state
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
   
     useEffect(() => {
       const handleScroll = () => {
@@ -83,15 +91,16 @@ const Navbar = () => {
         <div className={`${isFixed ? fixedNavbarClass : ''} ${isTransparent ? transparentBackgroundClass : solidBackgroundClass}`}>
         <div className="navbar bg-[#FFFFFF] flex justify-between">
         <div className="navbar-start">
-            <div className="dropdown">
-                <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </label>
-                <ul tabIndex={1} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                    {menuItems}
-                    
-                </ul>
-            </div>
+        <div className="dropdown">
+                        <label tabIndex={0} className="btn btn-ghost lg:hidden" onClick={toggleDropdown}>
+                            {isDropdownOpen ? <MdClose size={24} /> : <MdMenu size={24} />} {/* Toggle between menu and close icon */}
+                        </label>
+                        {isDropdownOpen && (
+                            <ul tabIndex={1} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                {menuItems}
+                            </ul>
+                        )}
+                    </div>
             <Link to = "/" className="btn btn-ghost normal-case text-xl">ReRead</Link>
         </div>
         <div className="navbar-center hidden lg:flex ">
@@ -100,6 +109,27 @@ const Navbar = () => {
                 
             </ul>
         </div>
+        <div className="navbar-end flex items-center">
+                    {/* Search Bar */}
+                    <div className="relative mx-2">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            className="rounded-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-400"
+                        />
+                        <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            <AiOutlineSearch size={20} />
+                        </span>
+                    </div>
+                   
+                    <AiOutlineHeart size={24} className="mx-2 cursor-pointer" />
+
+                   
+                    <AiOutlineShoppingCart size={24} className="mx-2 cursor-pointer" />
+
+                   
+                </div>
+            
         </div>
     
     </div>
