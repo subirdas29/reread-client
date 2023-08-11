@@ -1,8 +1,6 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
-
 import './Slider/Clientslider.css'
-
 import Item from "./Slider/SimpleItem";
 
 import img1 from "../../../assets/clientsimages/pic01.jpg";
@@ -11,9 +9,10 @@ import img3 from "../../../assets/clientsimages/pic03.jpg";
 import img4 from "../../../assets/clientsimages/pic04.jpg";
 import img5 from "../../../assets/clientsimages/pic05.jpg";
 import img6 from "../../../assets/clientsimages/pic06.jpg";
+
 const WhatClientSay = () => {
   return (
-    <div className="mx-10 mb-16 ">
+    <div className="mx-10 my-12 ">
       <h1 className="text-4xl font-bold text-center mb-10">What Client Says</h1>
     
       <Carousel itemsToShow={1} >
