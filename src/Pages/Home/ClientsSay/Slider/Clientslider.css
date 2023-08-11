@@ -1,23 +1,26 @@
-.kXteup:hover:enabled,
-.kXteup:focus:enabled {
+
+
+
+button.rec-dot_active{
+  box-shadow: 0 0 1px 3px rgb(244, 67, 68);
+  background-color:rgb(255 0 0 / 50%); ;
+}
+
+button.rec-dot:hover,
+button.rec-dot:focus  {
+ 
+  box-shadow: 0 0 1px 3px rgb(244, 67, 68);
+}
+
+
+button.rec-arrow:focus, button.rec-arrow:hover{
   background-color: rgb(244, 67, 68) !important;
-}
-.cVXxbE:hover,
-.cVXxbE:focus {
   box-shadow: 0 0 1px 3px rgb(244, 67, 68) !important;
 }
-.cVXxbE {
-  background-color: rgb(255 0 0 / 50%) !important;
-  box-shadow: 0 0 1px 3px rgb(244, 67, 68) !important;
-}
-.ezKHIn:hover {
-  box-shadow: 0 0 1px 3px rgb(244, 67, 68) !important;
-}
-.hNtcxH {
-  padding: 24px !important;
-  margin: 0px !important;
-}
-@media only screen and (max-width: 639px) {
+
+ 
+
+/* @media only screen and (max-width: 639px) {
   .jtKTCe {
     margin-top: 14px !important;
   }
@@ -33,4 +36,4 @@
   .jtKTCe {
     margin-top: 20px !important;
   }
-}
+} */

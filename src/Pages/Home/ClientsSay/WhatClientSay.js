@@ -2,7 +2,9 @@ import React from "react";
 import Carousel from "react-elastic-carousel";
 // import {Playground, Props } from 'docz';
 import './Slider/Clientslider.css'
+// import style from './Slider/Clientslider.module.css';
 import Item from "./Slider/SimpleItem";
+import Button from "./Slider/Button";
 import img1 from "../../../assets/clientsimages/pic01.jpg";
 import img2 from "../../../assets/clientsimages/pic02.jpg";
 import img3 from "../../../assets/clientsimages/pic03.jpg";
@@ -11,10 +13,13 @@ import img5 from "../../../assets/clientsimages/pic05.jpg";
 import img6 from "../../../assets/clientsimages/pic06.jpg";
 const WhatClientSay = () => {
   return (
-    <div className="mx-10 mb-16">
+    <div className="mx-10 mb-16 ">
       <h1 className="text-4xl font-bold text-center mb-10">What Client Says</h1>
-      <Carousel itemsToShow={1}>
-        <Item>
+    
+      <Carousel itemsToShow={1} >
+       
+       <Item>
+       
           <section className=" dark:bg-white dark:text-black drop-shadow-xl w-full">
             <div className="container flex flex-col items-center p-4 mx-auto space-y-6 md:p-8">
               <svg
@@ -62,6 +67,7 @@ const WhatClientSay = () => {
               </div>
             </div>
           </section>
+          
         </Item>
         <Item>
           <section className=" dark:bg-white dark:text-black drop-shadow-xl w-full">
@@ -308,8 +314,10 @@ const WhatClientSay = () => {
             </div>
           </section>
         </Item>
+      
       </Carousel>
-    </div>
+      </div>
+  
   );
 };
 
