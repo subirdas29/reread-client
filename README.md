@@ -14,7 +14,6 @@ This website is Resell book Selling site...This website is created for Sell the 
 - I have used ReactJs,ExpressJs,NodeJs,MongoDb
 - For Authentication I have used Firebase...
 - And Here also Authorization verified by the JWT web token
-- For secure payment system I used stripe site...
 - Used React Router Dom for proper Routing
 - Used Environmental variable for hide the DB usename, password and JWT Token from the github
  
@@ -25,7 +24,6 @@ This website is Resell book Selling site...This website is created for Sell the 
 - JWT WEB TOKEN
 - Environment Variables
 - Stripe
-- React-Router-Dom
 - React-Router-Dom
 - React-Icons
 - Express.js
