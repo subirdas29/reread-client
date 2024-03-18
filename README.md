@@ -8,7 +8,7 @@ https://reread-ba02e.web.app/
 
 
 ## Description
-This website is Resell book Selling site...This website is created for Sell the used books with Resell price...There have admin,buyer and seller pannel...Seller can sell used books and buyer can buy this book...Also Admin can control them...
+This website is a Resell book Selling site...This website is created to Sell used books with Resell prices...There are admin, buyer and seller panels...The seller can sell used books and the buyer can buy this book...Also, Admin can control them...
 ## Functionalities
 
 - I have used ReactJs,ExpressJs,NodeJs,MongoDb
