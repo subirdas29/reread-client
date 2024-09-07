@@ -11,11 +11,11 @@ https://reread-ba02e.web.app/
 This website is a Resell book Selling site...This website is created to Sell used books with Resell prices...There are admin, buyer and seller panels...The seller can sell used books and the buyer can buy this book...Also, Admin can control them...
 ## Functionalities
 
-- I have used ReactJs,ExpressJs,NodeJs,MongoDb
-- For Authentication I have used Firebase...
+- I have used ReactJs, ExpressJs, NodeJs,MongoDB
+- For Authentication, I have used Firebase...
 - And Here also Authorization verified by the JWT web token
 - Used React Router Dom for proper Routing
-- Used Environmental variable for hide the DB usename, password and JWT Token from the github
+- Used Environmental variable to hide the DB username, password and JWT Token from the GitHub
  
 
 
